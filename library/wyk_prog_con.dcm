@@ -1,0 +1,34 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ISP-3X2
+D AVR ISP
+K AVR ISP
+$ENDCMP
+#
+$CMP ISP-5X2
+D AVR ISP
+K AVR ISP
+$ENDCMP
+#
+$CMP ISP-6
+D AVR ISP
+K AVR ISP
+$ENDCMP
+#
+$CMP ST-LINK-V2-10X2
+D connector original st-link/v2, for STM32 & STM8
+K SWD, SWIM, ST-LINK
+F http://www.st.com/content/ccc/resource/technical/document/user_manual/65/e0/44/72/9e/34/41/8d/DM00026748.pdf/files/DM00026748.pdf/jcr:content/translations/en.DM00026748.pdf
+$ENDCMP
+#
+$CMP ST-LINK-V2-5X2
+D china copy st-link/v2, for STM32 & STM8
+K SWD, SWIM, ST-LINK
+$ENDCMP
+#
+$CMP SWD-4
+D connector with only SWD interface
+K SWD
+$ENDCMP
+#
+#End Doc Library
