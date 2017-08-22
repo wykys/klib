@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LM4861
+D 1.1W Audio Power Amplifier with Shutdown Mode, 8R load, VDD 5V, SO-8
+K D amplifier
+F http://www.ti.com/lit/ds/snas095c/snas095c.pdf
+$ENDCMP
+#
+#End Doc Library
