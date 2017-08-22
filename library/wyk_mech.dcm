@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP screw
+D screw who not connect to signal
+K screw
+$ENDCMP
+#
+$CMP screw_pad
+D screw who connect to signal
+K screw
+$ENDCMP
+#
+#End Doc Library

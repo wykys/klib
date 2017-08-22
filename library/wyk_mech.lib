@@ -1,0 +1,44 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# screw
+#
+DEF ~screw M 0 0 N N 1 F N
+F0 "M" 0 125 60 H V C CNN
+F1 "screw" 0 -125 60 H I C CNN
+F2 "" 0 -125 60 H V C CNN
+F3 "" 0 -125 60 H V C CNN
+DRAW
+P 2 0 1 0 -25 -75 25 -25 N
+P 2 0 1 0 -25 -50 25 0 N
+P 2 0 1 0 -25 -25 25 25 N
+P 2 0 1 0 -25 0 25 50 N
+P 2 0 1 0 -25 50 25 50 N
+P 2 0 1 0 0 -75 25 -50 N
+P 2 0 1 0 0 50 -25 25 N
+P 9 0 1 0 -25 50 -75 50 -75 75 75 75 75 50 25 50 25 -75 -25 -75 -25 50 N
+ENDDRAW
+ENDDEF
+#
+# screw_pad
+#
+DEF ~screw_pad M 0 0 N N 1 F N
+F0 "M" 0 125 60 H V C CNN
+F1 "screw_pad" 0 -125 60 H I C CNN
+F2 "" 0 -125 60 H V C CNN
+F3 "" 0 -125 60 H V C CNN
+DRAW
+P 2 0 1 0 -25 -75 25 -25 N
+P 2 0 1 0 -25 -50 25 0 N
+P 2 0 1 0 -25 -25 25 25 N
+P 2 0 1 0 -25 0 25 50 N
+P 2 0 1 0 -25 50 25 50 N
+P 2 0 1 0 0 -75 25 -50 N
+P 2 0 1 0 0 50 -25 25 N
+P 3 0 1 0 -25 50 -75 0 -100 0 N
+P 9 0 1 0 -25 50 -75 50 -75 75 75 75 75 50 25 50 25 -75 -25 -75 -25 50 N
+X ~ 1 -150 0 50 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library
