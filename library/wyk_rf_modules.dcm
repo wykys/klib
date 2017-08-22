@@ -6,4 +6,10 @@ K RF receiver
 F http://www.almeto.cz/images/katalog/DPW_RX_2.2A_150126_Almeto.pdf
 $ENDCMP
 #
+$CMP HM-TRP-869S
+D RF 100mW FSK Transceiver, 869MHz, VCC 2V4 - 3V6, UART bridge,  half-duplex
+K HM-TRP, RF modul
+F http://www.tme.eu/cz/Document/34c5f8a4794dad7a5068931b0a0d37c0/HM-TRP-869S.pdf
+$ENDCMP
+#
 #End Doc Library
