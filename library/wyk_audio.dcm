@@ -6,4 +6,9 @@ K D amplifier
 F http://www.ti.com/lit/ds/snas095c/snas095c.pdf
 $ENDCMP
 #
+$CMP TQ8025
+D melodic circuit for bells, output must be loaded, VDD 5V
+K bell, melodic
+$ENDCMP
+#
 #End Doc Library
