@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DPW_RX_2.2A
+D 2.4GHz receiver for DPW_TX_2.1A piezzo transmitter, 31 senders can be paired, Vcc = 1V8 - 3V6, 16mA
+K RF receiver
+F http://www.almeto.cz/images/katalog/DPW_RX_2.2A_150126_Almeto.pdf
+$ENDCMP
+#
+#End Doc Library
