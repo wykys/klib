@@ -1,8 +1,8 @@
-(module sesazovaci_znacka (layer F.Cu) (tedit 581080FB)
+(module targeting_mark (layer F.Cu) (tedit 599D8365)
   (fp_text reference REF** (at 0 -4) (layer F.SilkS) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (fp_text value sesazovaci_znacka (at 0 3) (layer F.Fab) hide
+  (fp_text value targeting_mark (at 0 3) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (pad 1 thru_hole circle (at 0 0) (size 2 2) (drill 0.6) (layers *.Cu *.Mask))
