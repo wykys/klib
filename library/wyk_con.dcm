@@ -1,47 +1,47 @@
 EESchema-DOCLIB  Version 2.0
 #
 $CMP IDC-2X03
-D IDC connector
+D IDC connector, 6 pins
 K IDC, MLW, 2X3, 2X03
 $ENDCMP
 #
 $CMP IDC-2X05
-D IDC connector
+D IDC connector, 10 pins
 K IDC, MLW, 2X5, 2X05
 $ENDCMP
 #
 $CMP IDC-2X07
-D IDC connector
+D IDC connector, 14 pins
 K IDC, MLW, 2X7, 2X07
 $ENDCMP
 #
 $CMP IDC-2X08
-D IDC connector
+D IDC connector, 16 pins
 K IDC, MLW, 2X8, 2X08
 $ENDCMP
 #
 $CMP IDC-2X10
-D IDC connector
+D IDC connector, 20 pins
 K IDC, MLW, 2X10
 $ENDCMP
 #
 $CMP IDC-2X13
-D IDC connector
+D IDC connector, 26 pins
 K IDC, MLW, 2X13
 $ENDCMP
 #
 $CMP IDC-2X17
-D IDC connector
+D IDC connector, 34 pins
 K IDC, MLW, 2X17
 $ENDCMP
 #
 $CMP IDC-2X20
-D IDC connector
+D IDC connector, 40 pins
 K IDC, MLW, 2X20
 $ENDCMP
 #
 $CMP IDC-2X25
-D IDC connector
+D IDC connector, 50 pins
 K IDC, MLW, 2X25
 $ENDCMP
 #
