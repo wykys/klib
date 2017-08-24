@@ -1,16 +1,16 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP ISP-1X6
+D AVR ISP
+K AVR ISP
+$ENDCMP
+#
 $CMP ISP-2X3
 D AVR ISP
 K AVR ISP
 $ENDCMP
 #
 $CMP ISP-2X5
-D AVR ISP
-K AVR ISP
-$ENDCMP
-#
-$CMP ISP-6
 D AVR ISP
 K AVR ISP
 $ENDCMP
@@ -26,7 +26,7 @@ D china copy st-link/v2, for STM32 & STM8
 K SWD, SWIM, ST-LINK
 $ENDCMP
 #
-$CMP SWD-4
+$CMP SWD-1X4
 D connector with only SWD interface
 K SWD
 $ENDCMP
