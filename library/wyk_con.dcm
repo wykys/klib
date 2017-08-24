@@ -1,48 +1,48 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP IDC-2X03
-D IDC connector, 6 pins
-K IDC, MLW, 2X3, 2X03
+$CMP IDC_02X03
+D IDC connector, 02X03, 6
+K IDC, MLW
 $ENDCMP
 #
-$CMP IDC-2X05
-D IDC connector, 10 pins
-K IDC, MLW, 2X5, 2X05
+$CMP IDC_02X05
+D IDC connector, 02X05, 10
+K IDC, MLW
 $ENDCMP
 #
-$CMP IDC-2X07
-D IDC connector, 14 pins
-K IDC, MLW, 2X7, 2X07
+$CMP IDC_02X07
+D IDC connector, 02X07, 14
+K IDC, MLW
 $ENDCMP
 #
-$CMP IDC-2X08
-D IDC connector, 16 pins
-K IDC, MLW, 2X8, 2X08
+$CMP IDC_02X08
+D IDC connector, 02X08, 16
+K IDC, MLW
 $ENDCMP
 #
-$CMP IDC-2X10
-D IDC connector, 20 pins
-K IDC, MLW, 2X10
+$CMP IDC_02X10
+D IDC connector, 02X10, 20
+K IDC, MLW
 $ENDCMP
 #
-$CMP IDC-2X13
-D IDC connector, 26 pins
-K IDC, MLW, 2X13
+$CMP IDC_02X13
+D IDC connector, 02X13, 26
+K IDC, MLW
 $ENDCMP
 #
-$CMP IDC-2X17
-D IDC connector, 34 pins
-K IDC, MLW, 2X17
+$CMP IDC_02X17
+D IDC connector, 02X17, 34
+K IDC, MLW
 $ENDCMP
 #
-$CMP IDC-2X20
-D IDC connector, 40 pins
-K IDC, MLW, 2X20
+$CMP IDC_02X20
+D IDC connector, 02X20, 40
+K IDC, MLW
 $ENDCMP
 #
-$CMP IDC-2X25
-D IDC connector, 50 pins
-K IDC, MLW, 2X25
+$CMP IDC_02X25
+D IDC connector, 02X25, 50
+K IDC, MLW
 $ENDCMP
 #
 #End Doc Library
