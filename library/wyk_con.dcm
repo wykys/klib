@@ -1,0 +1,18 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IDC-2X3
+D IDC connector
+K IDC, MLW, 2X3
+$ENDCMP
+#
+$CMP IDC-2X5
+D IDC connector
+K IDC, MLW, 2X5
+$ENDCMP
+#
+$CMP IDC-2X7
+D IDC connector
+K IDC, MLW, 2X7
+$ENDCMP
+#
+#End Doc Library
