@@ -1,34 +1,39 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP ISP-1X6
-D AVR ISP
-K AVR ISP
+$CMP AVR_ISP_01X06
+D AVR, ISP, header, 01X06
+K AVR, ISP, connector
+F ~
 $ENDCMP
 #
-$CMP ISP-2X3
-D AVR ISP
-K AVR ISP
+$CMP AVR_ISP_02X03
+D AVR, ISP, header, 02X05, 6
+K AVR ISP, connector
+F ~
 $ENDCMP
 #
-$CMP ISP-2X5
-D AVR ISP
-K AVR ISP
+$CMP AVR_ISP_02X05
+D AVR, ISP, header, 02X05, 10
+K AVR, ISP, connector
+F ~
 $ENDCMP
 #
-$CMP ST-LINK-V2-2X10
-D connector original st-link/v2, for STM32 & STM8
-K SWD, SWIM, ST-LINK
+$CMP ST_LINK_V2_02X05
+D china copy ST-LINK/V2, STM32, STM8, 02X10
+K SWD, SWIM, ST-LINK, connector
+F ~
+$ENDCMP
+#
+$CMP ST_LINK_V2_02X10
+D connector original ST-LINK/V2, STM32, STM8, 02X10
+K SWD, SWIM, ST-LINK, connector
 F http://www.st.com/content/ccc/resource/technical/document/user_manual/65/e0/44/72/9e/34/41/8d/DM00026748.pdf/files/DM00026748.pdf/jcr:content/translations/en.DM00026748.pdf
 $ENDCMP
 #
-$CMP ST-LINK-V2-2X5
-D china copy st-link/v2, for STM32 & STM8
-K SWD, SWIM, ST-LINK
-$ENDCMP
-#
-$CMP SWD-1X4
-D connector with only SWD interface
-K SWD
+$CMP SWD_01X04
+D SWD, STM32, 01X04
+K SWD, connector 
+F ~
 $ENDCMP
 #
 #End Doc Library
