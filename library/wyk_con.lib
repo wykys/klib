@@ -7,7 +7,7 @@ DEF IDC_02X03 P 0 50 Y N 1 F N
 F0 "P" -150 225 50 H V L CNN
 F1 "IDC_02X03" 0 -225 50 H V C CNN
 F2 "Connectors:IDC_Header_Straight_6pins" 400 0 50 V I C CNN
-F3 "" 500 0 50 V I C CNN
+F3 "~" 500 0 50 V I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -36,7 +36,7 @@ DEF IDC_02X05 P 0 50 Y N 1 F N
 F0 "P" -150 325 50 H V L CNN
 F1 "IDC_02X05" 0 -325 50 H V C CNN
 F2 "Connectors:IDC_Header_Straight_10pins" 400 0 50 V I C CNN
-F3 "" 500 0 50 V I C CNN
+F3 "~" 500 0 50 V I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -73,7 +73,7 @@ DEF IDC_02X07 P 0 50 Y N 1 F N
 F0 "P" -150 425 50 H V L CNN
 F1 "IDC_02X07" 0 -425 50 H V C CNN
 F2 "Connectors:IDC_Header_Straight_14pins" 400 0 50 V I C CNN
-F3 "" 500 0 50 V I C CNN
+F3 "~" 500 0 50 V I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -118,7 +118,7 @@ DEF IDC_02X08 P 0 50 Y N 1 F N
 F0 "P" -150 425 50 H V L CNN
 F1 "IDC_02X08" 0 -525 50 H V C CNN
 F2 "Connectors:IDC_Header_Straight_16pins" 400 0 50 V I C CNN
-F3 "" 500 0 50 V I C CNN
+F3 "~" 500 0 50 V I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -167,7 +167,7 @@ DEF IDC_02X10 P 0 50 Y N 1 F N
 F0 "P" -150 525 50 H V L CNN
 F1 "IDC_02X10" 0 -625 50 H V C CNN
 F2 "Connectors:IDC_Header_Straight_20pins" 400 0 50 V I C CNN
-F3 "" 500 0 50 V I C CNN
+F3 "~" 500 0 50 V I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -224,7 +224,7 @@ DEF IDC_02X13 P 0 50 Y N 1 F N
 F0 "P" -150 725 50 H V L CNN
 F1 "IDC_02X13" 0 -725 50 H V C CNN
 F2 "Connectors:IDC_Header_Straight_26pins" 400 0 50 V I C CNN
-F3 "" 500 0 50 V I C CNN
+F3 "~" 500 0 50 V I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -293,7 +293,7 @@ DEF IDC_02X17 P 0 50 Y N 1 F N
 F0 "P" -150 925 50 H V L CNN
 F1 "IDC_02X17" 0 -925 50 H V C CNN
 F2 "Connectors:IDC_Header_Straight_34pins" 400 0 50 V I C CNN
-F3 "" 500 0 50 V I C CNN
+F3 "~" 500 0 50 V I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -378,7 +378,7 @@ DEF IDC_02X20 P 0 50 Y N 1 F N
 F0 "P" -150 1025 50 H V L CNN
 F1 "IDC_02X20" 0 -1125 50 H V C CNN
 F2 "Connectors:IDC_Header_Straight_40pins" 400 0 50 V I C CNN
-F3 "" 500 0 50 V I C CNN
+F3 "~" 500 0 50 V I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -475,7 +475,7 @@ DEF IDC_02X25 P 0 50 Y N 1 F N
 F0 "P" -150 1325 50 H V L CNN
 F1 "IDC_02X25" 0 -1325 50 H V C CNN
 F2 "Connectors:IDC_Header_Straight_50pins" 400 0 50 V I C CNN
-F3 "" 500 0 50 V I C CNN
+F3 "~" 500 0 50 V I C CNN
 $FPLIST
  *IDC*
  *Header*
