@@ -18,6 +18,24 @@ K AVR, ISP, connector
 F ~
 $ENDCMP
 #
+$CMP Conn_AVR_ISP_02X03
+D AVR, ISP, header, 02X05, 6
+K AVR ISP, connector
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf
+$ENDCMP
+#
+$CMP Conn_AVR_PDI_02X03
+D AVR, PDI, header, 02X05, 6
+K AVR PDI, connector
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf
+$ENDCMP
+#
+$CMP Conn_AVR_TPI_02X03
+D AVR, TPI, header, 02X05, 6
+K AVR TPI, connector
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf
+$ENDCMP
+#
 $CMP ST_LINK_V2_02X05
 D china copy ST-LINK/V2, STM32, STM8, 02X10
 K SWD, SWIM, ST-LINK, connector
@@ -32,7 +50,7 @@ $ENDCMP
 #
 $CMP SWD_01X04
 D SWD, STM32, 01X04
-K SWD, connector 
+K SWD, connector
 F ~
 $ENDCMP
 #
