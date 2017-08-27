@@ -1,8 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP LED_BGR
+$CMP LTST-G563ZEGBW
 D LED RGB 6 pins
 K led rgb diode
+F http://www.tme.eu/cz/Document/176b58d882d1b62e3b8b0072ad86956d/LTST-G563ZEGBW.pdf
 $ENDCMP
 #
 #End Doc Library
