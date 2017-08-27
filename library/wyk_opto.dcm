@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LED_BGR
+D LED RGB 6 pins
+K led rgb diode
+$ENDCMP
+#
+#End Doc Library
