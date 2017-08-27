@@ -7,7 +7,7 @@ F http://www.tme.eu/cz/Document/176b58d882d1b62e3b8b0072ad86956d/LTST-G563ZEGBW.
 $ENDCMP
 #
 $CMP OSRB38C9BA
-D 37.8kHz, IR, receaver
+D 37.8kHz, IR, receiver
 K IR
 F http://www.tme.eu/cz/Document/777fdf21e0fba3fd5c036ef95756460c/OSRB38C9BA.pdf
 $ENDCMP
