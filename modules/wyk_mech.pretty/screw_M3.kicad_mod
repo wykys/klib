@@ -1,11 +1,11 @@
-(module screw_M3 (layer F.Cu) (tedit 591AC3AE)
-  (fp_text reference REF** (at 0 0.75) (layer F.SilkS) hide
+(module screw_M3 (layer F.Cu) (tedit 59D92A8F)
+  (fp_text reference REF** (at 0 4) (layer F.SilkS) hide
     (effects (font (size 1.5 1.5) (thickness 0.15)))
   )
-  (fp_text value screw_M3 (at 0 -1.27) (layer F.Fab) hide
+  (fp_text value screw_M3 (at 0 -4) (layer F.Fab) hide
     (effects (font (size 1.5 1.5) (thickness 0.15)))
   )
   (fp_circle (center 0 0) (end 3 0) (layer F.SilkS) (width 0.15))
   (pad "" np_thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers *.Cu *.Mask)
-    (solder_mask_margin 1.5))
+    (solder_mask_margin 1.5) (clearance 1.5))
 )
