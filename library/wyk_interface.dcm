@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CP2102
+D USB 2.0 to USART bridge, 12Mbps
+K bridge
+F https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf
+$ENDCMP
+#
+#End Doc Library
