@@ -1,3 +1,8 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP PWR_FLAG
+D general power-flag symbol
+K Power Flag Symbol
+$ENDCMP
+#
 #End Doc Library
