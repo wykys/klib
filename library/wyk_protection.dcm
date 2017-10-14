@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP USBLC6-2
+D USB ESD protection 6V
+K transil
+F https://www.tme.eu/cz/Document/db59d28d28a96c34f26d05f234ff409c/USBLC6-2.pdf
+$ENDCMP
+#
+#End Doc Library
