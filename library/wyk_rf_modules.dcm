@@ -9,7 +9,7 @@ $ENDCMP
 $CMP HM-TRP-869S
 D RF 100mW FSK Transceiver, 869MHz, VCC 2V4 - 3V6, UART bridge,  half-duplex
 K HM-TRP, RF modul
-F http://www.tme.eu/cz/Document/34c5f8a4794dad7a5068931b0a0d37c0/HM-TRP-869S.pdf
+F https://www.rcscomponents.kiev.ua/datasheets/HM-TRP_433.pdf
 $ENDCMP
 #
 #End Doc Library
