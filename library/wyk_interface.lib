@@ -4,8 +4,8 @@ EESchema-LIBRARY Version 2.4
 # CP2102
 #
 DEF CP2102 U 0 40 Y Y 1 F N
-F0 "U" 200 950 60 H V L CNN
-F1 "CP2102" 200 850 60 H V L CNN
+F0 "U" 200 950 50 H V L CNN
+F1 "CP2102" 200 850 50 H V L CNN
 F2 "Housings_DFN_QFN:QFN-28-1EP_5x5mm_Pitch0.5mm" 100 -950 50 H I L CNN
 F3 "https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf" 100 -1050 50 H I L CNN
 $FPLIST
