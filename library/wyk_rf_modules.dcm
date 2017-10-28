@@ -12,4 +12,10 @@ K HM-TRP, RF modul
 F https://www.rcscomponents.kiev.ua/datasheets/HM-TRP_433.pdf
 $ENDCMP
 #
+$CMP RN4871
+D Bluetooth 4.2 Low Energy Module, ASCII COMMAND API
+K Bluetooth BT
+F http://ww1.microchip.com/downloads/en/DeviceDoc/50002489B.pdf
+$ENDCMP
+#
 #End Doc Library
