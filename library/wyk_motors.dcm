@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TLE52062GAUMA1
+D H brige 5A continous 6A peak, Voltage 6V to 40V
+K H bridge, motor
+F http://www.farnell.com/datasheets/1932119.pdf
+$ENDCMP
+#
+#End Doc Library
