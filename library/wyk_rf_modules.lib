@@ -4,12 +4,12 @@ EESchema-LIBRARY Version 2.4
 # DPW_RX_2.2A
 #
 DEF DPW_RX_2.2A P 0 40 Y Y 1 F N
-F0 "P" -450 675 60 H V L CNN
-F1 "DPW_RX_2.2A" 50 -675 60 H V L CNN
-F2 "Socket_Strips:Socket_Strip_Angled_2x11_Pitch2.54mm" 50 -775 60 H I L CNN
-F3 "" -650 -500 60 H I C CNN
+F0 "P" 600 800 50 H V R CNN
+F1 "DPW_RX_2.2A" 600 700 50 H V R CNN
+F2 "Socket_Strips:Socket_Strip_Angled_2x11_Pitch2.54mm" 100 -700 50 H I L CNN
+F3 "http://optimist.plavidla.cz/images/katalog/DPW_RX_2.2A_150126_Almeto.pdf" 100 -800 50 H I L CNN
 DRAW
-S -450 600 450 -600 0 1 0 f
+S -450 600 450 -600 0 1 10 f
 X TEST 1 650 -100 200 L 50 50 1 1 N N
 X NC 10 650 200 200 L 50 50 1 1 N N
 X OUT1 11 650 -200 200 L 50 50 1 1 O
