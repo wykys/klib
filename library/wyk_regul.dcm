@@ -7,7 +7,7 @@ F https://www.tme.eu/cz/details/mcp16301ht-e_ch/stabilizator-napeti-obvody-dc-dc
 $ENDCMP
 #
 $CMP MCP1804T-3302I/DB
-D 150 mA, 28V LDO Regulator
+D +3V3, 150 mA, 28V LDO Regulator
 K regulator linear ldo
 F http://ww1.microchip.com/downloads/en/DeviceDoc/20002200D.pdf
 $ENDCMP
