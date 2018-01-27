@@ -1,8 +1,14 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP box
+D symbol for mechanical packege
+K box package
+F ~
+$ENDCMP
+#
 $CMP screw
-D screw who not connect to signal
-K screw
+D bolt who not connect to signal
+K bolt
 F ~
 $ENDCMP
 #
