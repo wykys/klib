@@ -1,4 +1,4 @@
-(module RN4871 (layer F.Cu) (tedit 59FFBD73)
+(module RN4871 (layer F.Cu) (tedit 5A726FA4)
   (descr RN4871)
   (tags "Integrated Circuit")
   (attr smd)
@@ -41,8 +41,8 @@
   (pad 14 smd rect (at 4.25 -1.025 90) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask))
   (pad 15 smd rect (at 4.25 -2.225 90) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask))
   (pad 16 smd rect (at 4.25 -3.425 90) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask))
-  (model /home/wykys/projects/kicad/modules/wyk_rf_modules.pretty/3D/RN4871.step
-    (at (xyz 0 0.09842519685039371 0.01968503937007874))
+  (model "$(W3D)/rf_module.3dshapes/RN4871.step"
+    (offset (xyz 0 2.499999962453767 0.4999999924907534))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 180 0))
   )
