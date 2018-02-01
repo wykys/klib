@@ -1,6 +1,11 @@
-# wykys KiCAD library
+# Wykys's KiCAD Library
 
-## requires the definition of these constants
+## Links
+
+- [ ] KiCad Library Convention [KLC](http://kicad-pcb.org/libraries/klc/)
+- [ ] KLC Helper Scripts [kicad-library-utils](https://github.com/kicad/kicad-library-utils)
+
+## Requires the definition of these constants
 
 ```
 WSYM - path to symbols
