@@ -4,6 +4,7 @@
 
 - [ ] KiCad Library Convention [KLC](http://kicad-pcb.org/libraries/klc/)
 - [ ] KLC Helper Scripts [kicad-library-utils](https://github.com/kicad/kicad-library-utils)
+- [ ] STEP to WRL [freecad-scripts](https://github.com/SchrodingersGat/freecad-scripts)
 
 ## Requires the definition of these constants
 
