@@ -8,9 +8,12 @@
 ## Requires the definition of these constants
 
 ```
-WSYM - path to symbols
-WMOD - path to footprints
-W3D  - path to 3D models
+WSYM - path_to_klib/library
+WMOD - path_to_klib/footprints
+W3D  - path_to_klib/packeges3d
 ```
 
-![demo](/img/env-var.png)
+## Typs for users:
+
+- [ ] the variables are used in the following ways: `$(WSYM)/path_to_lib`
+- [ ] `${KIPRJMOD}` is path to current KiCAD project
