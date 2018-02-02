@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MCP16301H
+D Step down, buck, Vin: 4.7V - 36V, Vout: 2V - 15V, 600mA, SOT23-6
+K Step down
+F https://www.tme.eu/cz/details/mcp16301ht-e_ch/stabilizator-napeti-obvody-dc-dc/microchip-technology/
+$ENDCMP
+#

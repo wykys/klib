@@ -1,0 +1,21 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Box
+D symbol for mechanical packege
+K box package
+F ~
+$ENDCMP
+#
+$CMP Screw
+D bolt who not connect to signal
+K bolt
+F ~
+$ENDCMP
+#
+$CMP Screw_Pad
+D screw who connect to signal
+K screw
+F ~
+$ENDCMP
+#
+#End Doc Library
