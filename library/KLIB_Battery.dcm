@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP BQ2057CSN
+D Battery Charger for 1 Cell of Li-Ion, Li-Pol battery, 15V input, 4.2V / 2A charge, SOIC-8
+K charger battery
+F http://www.ti.com/lit/ds/symlink/bq2057.pdf
+$ENDCMP
+#
 $CMP LTC4150
 D Coulomb Counter / Battery Gas Gauge
 K columb counter battery
