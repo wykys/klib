@@ -1,8 +1,15 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP LTC1871
+D Wide Input Range, No RSENSE Current Mode Boost, Flyback and SEPIC Controller
+K step-up
+F http://cds.linear.com/docs/en/datasheet/1871fe.pdf
+$ENDCMP
+#
 $CMP MCP16301H
 D Step down, buck, Vin: 4.7V - 36V, Vout: 2V - 15V, 600mA, SOT23-6
 K Step down
 F https://www.tme.eu/cz/details/mcp16301ht-e_ch/stabilizator-napeti-obvody-dc-dc/microchip-technology/
 $ENDCMP
 #
+#End Doc Library
