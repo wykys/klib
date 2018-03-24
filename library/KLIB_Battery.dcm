@@ -12,6 +12,18 @@ K charger bettery li-on
 F http://www.ti.com/lit/ds/symlink/bq24190.pdf
 $ENDCMP
 #
+$CMP LTC2941CMS8E
+D Battery Gas Gauge with I2C Interface
+K coulomb counter
+F http://cds.linear.com/docs/en/datasheet/2941fb.pdf
+$ENDCMP
+#
+$CMP LTC2941IMS8E
+D Battery Gas Gauge with I2C Interface
+K coulomb counter
+F http://cds.linear.com/docs/en/datasheet/2941fb.pdf
+$ENDCMP
+#
 $CMP LTC4150
 D Coulomb Counter / Battery Gas Gauge
 K columb counter battery
