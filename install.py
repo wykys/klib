@@ -12,7 +12,7 @@ KLIB = {
 path_config = os.path.expanduser('~') + '/.config/kicad/kicad_common'
 path_klib = os.getcwd()
 
-if os.path.exists(path_config) == False:
+if not os.path.exists(path_config):
     print('ERROR: file {} not exist'.format(path_config))
     exit(1)
 
