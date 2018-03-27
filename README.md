@@ -7,12 +7,13 @@
 - [ ] STEP to WRL [freecad-scripts](https://github.com/SchrodingersGat/freecad-scripts)
 
 ## Requires the definition of these constants
-file `~/.config/kicad/kicad_common`
+File: `~/.config/kicad/kicad_common`
 ```
 WSYM = path_to_klib/library
 WMOD = path_to_klib/footprints
 W3D  = path_to_klib/packeges3d
 ```
+You can use `install.py`
 
 ## Types for users:
 
