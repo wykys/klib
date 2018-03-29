@@ -12,18 +12,21 @@ KLIB = {
     'WSYM': 'library',
 }
 
+KICAD = {
+    'KISYSMOD': '/usr/share/kicad/modules',
+    'KISYS3DMOD': '/usr/share/kicad/modules/packages3d',
+    'KICAD_PTEMPLATES': '/usr/share/kicad/template',
+    'KICAD_SYMBOL_DIR': '/usr/share/kicad/library',
+}
+
 LIB = '.lib'
 MOD = '.pretty'
+
 
 path_klib = os.getcwd()
 path_kicad_common = os.path.expanduser('~') + '/.config/kicad/kicad_common'
 path_fp_lib_table = os.path.expanduser('~') + '/.config/kicad/fp-lib-table'
 path_sym_lib_table = os.path.expanduser('~') + '/.config/kicad/sym-lib-table'
-
-klib_library = sorted([f.name[:-len(LIB)] for f in os.scandir(KLIB['WSYM'])
-                       if len(f.name) > len(LIB) and f.name[-len(LIB):] == LIB])
-klib_modules = sorted([f.name[:-len(MOD)] for f in os.scandir(KLIB['WMOD'])
-                       if len(f.name) > len(MOD) and f.name[-len(MOD):] == MOD])
 
 
 def error(text):
@@ -33,6 +36,13 @@ def error(text):
 
 def ok(text):
     print('{}{}OK:{} {}{}'.format(Fore.GREEN, Style.BRIGHT, Style.NORMAL, text, Style.RESET_ALL), file=sys.stdout)
+
+
+def get_files(path, extension):
+    ext_len = len(extension)
+    return sorted(
+        f.name[:-ext_len] for f in os.scandir(path) if len(f.name) > ext_len and f.name[-ext_len:] == extension
+    )
 
 
 def environment_variables(path):
@@ -53,24 +63,25 @@ def environment_variables(path):
     ok('{} is updated'.format(path))
 
 
-def lib_table(path):
+def lib_table(path, lib, var):
     if not os.path.exists(path):
         error('file {} does not exist'.format(path))
 
     with open(path, 'r') as fr:
         lib_table_old = fr.readlines()
 
-    lib_table_new = [line for line in lib_table_old if not 'KLIB' in line][:-1]
+    lib_table_new = [line for line in lib_table_old if not var in line][:-1]
+    var = '${{{}}}'.format(var)
 
     if 'sym-lib-table' in path:
-        for lib in klib_library:
+        for lib in lib:
             lib_table_new.append(
-                '  (lib (name {})(type Legacy)(uri {}/{}{})(options "")(descr ""))\n'.format(lib, '${WSYM}', lib, LIB)
+                '  (lib (name {})(type Legacy)(uri {}/{}{})(options "")(descr ""))\n'.format(lib, var, lib, LIB)
             )
     else:
-        for lib in klib_modules:
+        for lib in lib:
             lib_table_new.append(
-                '  (lib (name {})(type KiCad)(uri "{}/{}{}")(options "")(descr ""))\n'.format(lib, '${WMOD}', lib, MOD)
+                '  (lib (name {})(type KiCad)(uri "{}/{}{}")(options "")(descr ""))\n'.format(lib, var, lib, MOD)
             )
 
     lib_table_new.append(')\n')
@@ -82,6 +93,16 @@ def lib_table(path):
 
 
 if __name__ == '__main__':
+    klib_library = get_files(KLIB['WSYM'], LIB)
+    klib_modules = get_files(KLIB['WMOD'], MOD)
+
+    kicad_library = get_files(KICAD['KICAD_SYMBOL_DIR'], LIB)
+    kicad_modules = get_files(KICAD['KISYSMOD'], MOD)
+
     environment_variables(path_kicad_common)
-    lib_table(path_sym_lib_table)
-    lib_table(path_fp_lib_table)
+
+    lib_table(path_sym_lib_table, kicad_library, 'KICAD_SYMBOL_DIR')
+    lib_table(path_fp_lib_table, kicad_modules, 'KISYSMOD')
+
+    lib_table(path_sym_lib_table, klib_library, 'WSYM')
+    lib_table(path_fp_lib_table, klib_modules, 'WMOD')
