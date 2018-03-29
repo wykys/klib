@@ -59,7 +59,17 @@ def environment_variables(path):
     with open(path, 'r') as fr:
         config_old = fr.readlines()
 
-    config_new = [line for line in config_old if not any(key in line for key in KLIB)]
+    config_new = [
+        line for line in config_old if not any(
+            (
+                any(key in line for key in KICAD),
+                any(key in line for key in KLIB)
+            )
+        )
+    ]
+
+    for key in KICAD:
+        config_new.append('{}={}\n'.format(key, KICAD[key]))
 
     for key in KLIB:
         config_new.append('{}={}/{}\n'.format(key, path_klib, KLIB[key]))
