@@ -38,6 +38,10 @@ def ok(text):
     print('{}{}OK:{} {}{}'.format(Fore.GREEN, Style.BRIGHT, Style.NORMAL, text, Style.RESET_ALL), file=sys.stdout)
 
 
+def info(text):
+    print('{}{}INFO:{} {}{}'.format(Fore.WHITE, Style.BRIGHT, Style.NORMAL, text, Style.RESET_ALL), file=sys.stdout)
+
+
 def get_files(path, extension):
     ext_len = len(extension)
     return sorted(
@@ -99,10 +103,13 @@ if __name__ == '__main__':
     kicad_library = get_files(KICAD['KICAD_SYMBOL_DIR'], LIB)
     kicad_modules = get_files(KICAD['KISYSMOD'], MOD)
 
+    info('update enviroment variables')
     environment_variables(path_kicad_common)
 
+    info('update official kicad library')
     lib_table(path_sym_lib_table, kicad_library, 'KICAD_SYMBOL_DIR', LIB)
     lib_table(path_fp_lib_table, kicad_modules, 'KISYSMOD', MOD)
 
+    info('update klib')
     lib_table(path_sym_lib_table, klib_library, 'WSYM', LIB)
     lib_table(path_fp_lib_table, klib_modules, 'WMOD', MOD)
