@@ -29,36 +29,58 @@ path_fp_lib_table = os.path.expanduser('~') + '/.config/kicad/fp-lib-table'
 path_sym_lib_table = os.path.expanduser('~') + '/.config/kicad/sym-lib-table'
 
 
-def log(tag, content, color, fil):
-    print('{}{}{}:{} {}{}'.format(color, Style.BRIGHT, tag, Style.NORMAL, content, Style.RESET_ALL), file=fil)
+class NotExist(Exception):
+    def __init__(self, name):
+        self.error_text = '{} is not exist'.format(name)
+
+    def __str__(self):
+        return self.error_text
 
 
-def error(text):
-    log('ERROR', text, Fore.RED, sys.stderr)
-    exit(1)
+def log(tag, color, fil):
+    def log_decorator(func):
+        def func_wrapper(content):
+            print(
+                '{}{}{}:{} {}{}'.format(
+                    color, Style.BRIGHT, tag, Style.NORMAL, func(content), Style.RESET_ALL
+                ),
+                file=fil
+            )
+        return func_wrapper
+    return log_decorator
 
 
-def ok(text):
-    log('OK', text, Fore.GREEN, sys.stdout)
+@log('ERROR', Fore.RED, sys.stderr)
+def error(content):
+    return content
 
 
-def info(text):
-    log('INFO', text, Fore.WHITE, sys.stdout)
+@log('OK', Fore.GREEN, sys.stdout)
+def ok(content):
+    return content
+
+
+@log('INFO', Fore.WHITE, sys.stdout)
+def info(content):
+    return content
 
 
 def get_libraries(path, extension):
     if not os.path.exists(path):
-        error('file {} does not exist'.format(path))
+        raise NotExist(path)
 
     ext_len = len(extension)
     return sorted(
-        f.name[:-ext_len] for f in os.scandir(path) if len(f.name) > ext_len and f.name[-ext_len:] == extension
+        f.name[:-ext_len] for f in os.scandir(path) if all((
+            len(f.name) > ext_len,
+            f.name[-ext_len:] == extension
+        ))
     )
 
 
 def environment_variables(path):
     if not os.path.exists(path):
-        error('file {} does not exist'.format(path))
+        raise NotExist(path)
 
     with open(path, 'r') as fr:
         config_old = fr.readlines()
@@ -86,7 +108,7 @@ def environment_variables(path):
 
 def lib_table(path, library, var, extension):
     if not os.path.exists(path):
-        error('file {} does not exist'.format(path))
+        raise NotExist(path)
 
     with open(path, 'r') as fr:
         lib_table_old = fr.readlines()
@@ -114,19 +136,24 @@ def lib_table(path, library, var, extension):
 
 
 if __name__ == '__main__':
-    klib_library = get_libraries(KLIB['WSYM'], LIB)
-    klib_modules = get_libraries(KLIB['WMOD'], MOD)
+    try:
+        klib_library = get_libraries(KLIB['WSYM'], LIB)
+        klib_modules = get_libraries(KLIB['WMOD'], MOD)
 
-    kicad_library = get_libraries(KICAD['KICAD_SYMBOL_DIR'], LIB)
-    kicad_modules = get_libraries(KICAD['KISYSMOD'], MOD)
+        kicad_library = get_libraries(KICAD['KICAD_SYMBOL_DIR'], LIB)
+        kicad_modules = get_libraries(KICAD['KISYSMOD'], MOD)
 
-    info('update enviroment variables')
-    environment_variables(path_kicad_common)
+        info('update enviroment variables')
+        environment_variables(path_kicad_common)
 
-    info('update official kicad library')
-    lib_table(path_sym_lib_table, kicad_library, 'KICAD_SYMBOL_DIR', LIB)
-    lib_table(path_fp_lib_table, kicad_modules, 'KISYSMOD', MOD)
+        info('update official kicad library')
+        lib_table(path_sym_lib_table, kicad_library, 'KICAD_SYMBOL_DIR', LIB)
+        lib_table(path_fp_lib_table, kicad_modules, 'KISYSMOD', MOD)
 
-    info('update klib')
-    lib_table(path_sym_lib_table, klib_library, 'WSYM', LIB)
-    lib_table(path_fp_lib_table, klib_modules, 'WMOD', MOD)
+        info('update klib')
+        lib_table(path_sym_lib_table, klib_library, 'WSYM', LIB)
+        lib_table(path_fp_lib_table, klib_modules, 'WMOD', MOD)
+
+    except NotExist as e:
+        error(str(e))
+        exit(1)
