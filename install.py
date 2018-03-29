@@ -29,17 +29,21 @@ path_fp_lib_table = os.path.expanduser('~') + '/.config/kicad/fp-lib-table'
 path_sym_lib_table = os.path.expanduser('~') + '/.config/kicad/sym-lib-table'
 
 
+def log(tag, content, color, fil):
+    print('{}{}{}:{} {}{}'.format(color, Style.BRIGHT, tag, Style.NORMAL, content, Style.RESET_ALL), file=fil)
+
+
 def error(text):
-    print('{}{}ERROR:{} {}{}'.format(Fore.RED, Style.BRIGHT, Style.NORMAL, text, Style.RESET_ALL), file=sys.stderr)
+    log('ERROR', text, Fore.RED, sys.stderr)
     exit(1)
 
 
 def ok(text):
-    print('{}{}OK:{} {}{}'.format(Fore.GREEN, Style.BRIGHT, Style.NORMAL, text, Style.RESET_ALL), file=sys.stdout)
+    log('OK', text, Fore.GREEN, sys.stdout)
 
 
 def info(text):
-    print('{}{}INFO:{} {}{}'.format(Fore.WHITE, Style.BRIGHT, Style.NORMAL, text, Style.RESET_ALL), file=sys.stdout)
+    log('INFO', text, Fore.WHITE, sys.stdout)
 
 
 def get_libraries(path, extension):
