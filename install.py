@@ -2,6 +2,9 @@
 # wykys
 # automation of installation and administration of KLIB in KiCAD
 import os
+import sys
+
+from colorama import Back, Fore, Style
 
 KLIB = {
     'W3D': 'packages3d',
@@ -9,25 +12,34 @@ KLIB = {
     'WSYM': 'library',
 }
 
+LIB = '.lib'
+MOD = '.pretty'
+
 path_klib = os.getcwd()
 path_kicad_common = os.path.expanduser('~') + '/.config/kicad/kicad_common'
 path_fp_lib_table = os.path.expanduser('~') + '/.config/kicad/fp-lib-table'
 path_sym_lib_table = os.path.expanduser('~') + '/.config/kicad/sym-lib-table'
 
-klib_library = sorted([f.name[:-4] for f in os.scandir(KLIB['WSYM']) if len(f.name) > 4 and f.name[-4:] == '.lib'])
-klib_modules = sorted([f.name[:-7] for f in os.scandir(KLIB['WMOD']) if len(f.name) > 7 and f.name[-7:] == '.pretty'])
+klib_library = sorted([f.name[:-len(LIB)] for f in os.scandir(KLIB['WSYM'])
+                       if len(f.name) > len(LIB) and f.name[-len(LIB):] == LIB])
+klib_modules = sorted([f.name[:-len(MOD)] for f in os.scandir(KLIB['WMOD'])
+                       if len(f.name) > len(MOD) and f.name[-len(MOD):] == MOD])
 
 
-def error_path_not_exist(path):
-    print('ERROR: file {} not exist'.format(path))
+def error(text):
+    print('{}{}ERROR:{} {}{}'.format(Fore.RED, Style.BRIGHT, Style.NORMAL, text, Style.RESET_ALL), file=sys.stderr)
     exit(1)
 
 
-def environment_variables():
-    if not os.path.exists(path_kicad_common):
-        error_path_not_exist(path_kicad_common)
+def ok(text):
+    print('{}{}OK:{} {}{}'.format(Fore.GREEN, Style.BRIGHT, Style.NORMAL, text, Style.RESET_ALL), file=sys.stdout)
 
-    with open(path_kicad_common, 'r') as fr:
+
+def environment_variables(path):
+    if not os.path.exists(path):
+        error('file {} does not exist'.format(path))
+
+    with open(path, 'r') as fr:
         config_old = fr.readlines()
 
     config_new = [line for line in config_old if not any(key in line for key in KLIB)]
@@ -35,13 +47,15 @@ def environment_variables():
     for key in KLIB:
         config_new.append('{}={}/{}\n'.format(key, path_klib, KLIB[key]))
 
-    with open(path_kicad_common, 'w') as fw:
+    with open(path, 'w') as fw:
         fw.writelines(config_new)
+
+    ok('{} is updated'.format(path))
 
 
 def lib_table(path):
     if not os.path.exists(path):
-        error_path_not_exist(path)
+        error('file {} does not exist'.format(path))
 
     with open(path, 'r') as fr:
         lib_table_old = fr.readlines()
@@ -51,12 +65,12 @@ def lib_table(path):
     if 'sym-lib-table' in path:
         for lib in klib_library:
             lib_table_new.append(
-                '  (lib (name {})(type Legacy)(uri {}/{}.lib)(options "")(descr ""))\n'.format(lib, '${WSYM}', lib)
+                '  (lib (name {})(type Legacy)(uri {}/{}{})(options "")(descr ""))\n'.format(lib, '${WSYM}', lib, LIB)
             )
     else:
         for lib in klib_modules:
             lib_table_new.append(
-                '  (lib (name {})(type KiCad)(uri "{}/{}.pretty")(options "")(descr ""))\n'.format(lib, '${WMOD}', lib)
+                '  (lib (name {})(type KiCad)(uri "{}/{}{}")(options "")(descr ""))\n'.format(lib, '${WMOD}', lib, MOD)
             )
 
     lib_table_new.append(')\n')
@@ -64,8 +78,10 @@ def lib_table(path):
     with open(path, 'w') as fw:
         fw.writelines(lib_table_new)
 
+    ok('{} is updated'.format(path))
+
 
 if __name__ == '__main__':
-    environment_variables()
+    environment_variables(path_kicad_common)
     lib_table(path_sym_lib_table)
     lib_table(path_fp_lib_table)
