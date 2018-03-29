@@ -21,7 +21,7 @@ You can use `install.py`
 - [ ] `${KIPRJMOD}` is path to current KiCAD project folder
 
 
-## STEP to WRL
+## [STEP to WRL](https://github.com/SchrodingersGat/freecad-scripts)
 
 ```bash
 # go to the freecad scripts destination
