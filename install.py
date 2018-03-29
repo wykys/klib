@@ -42,7 +42,10 @@ def info(text):
     print('{}{}INFO:{} {}{}'.format(Fore.WHITE, Style.BRIGHT, Style.NORMAL, text, Style.RESET_ALL), file=sys.stdout)
 
 
-def get_files(path, extension):
+def get_libraries(path, extension):
+    if not os.path.exists(path):
+        error('file {} does not exist'.format(path))
+
     ext_len = len(extension)
     return sorted(
         f.name[:-ext_len] for f in os.scandir(path) if len(f.name) > ext_len and f.name[-ext_len:] == extension
@@ -97,11 +100,11 @@ def lib_table(path, library, var, extension):
 
 
 if __name__ == '__main__':
-    klib_library = get_files(KLIB['WSYM'], LIB)
-    klib_modules = get_files(KLIB['WMOD'], MOD)
+    klib_library = get_libraries(KLIB['WSYM'], LIB)
+    klib_modules = get_libraries(KLIB['WMOD'], MOD)
 
-    kicad_library = get_files(KICAD['KICAD_SYMBOL_DIR'], LIB)
-    kicad_modules = get_files(KICAD['KISYSMOD'], MOD)
+    kicad_library = get_libraries(KICAD['KICAD_SYMBOL_DIR'], LIB)
+    kicad_modules = get_libraries(KICAD['KISYSMOD'], MOD)
 
     info('update enviroment variables')
     environment_variables(path_kicad_common)
