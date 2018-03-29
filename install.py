@@ -86,12 +86,10 @@ def environment_variables(path):
         config_old = fr.readlines()
 
     config_new = [
-        line for line in config_old if not any(
-            (
-                any(key in line for key in KICAD),
-                any(key in line for key in KLIB)
-            )
-        )
+        line for line in config_old if not any((
+            any(key in line for key in KICAD),
+            any(key in line for key in KLIB)
+        ))
     ]
 
     for key in KICAD:
