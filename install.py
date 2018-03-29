@@ -63,7 +63,7 @@ def environment_variables(path):
     ok('{} is updated'.format(path))
 
 
-def lib_table(path, lib, var):
+def lib_table(path, library, var, extension):
     if not os.path.exists(path):
         error('file {} does not exist'.format(path))
 
@@ -73,16 +73,16 @@ def lib_table(path, lib, var):
     lib_table_new = [line for line in lib_table_old if not var in line][:-1]
     var = '${{{}}}'.format(var)
 
-    if 'sym-lib-table' in path:
-        for lib in lib:
-            lib_table_new.append(
-                '  (lib (name {})(type Legacy)(uri {}/{}{})(options "")(descr ""))\n'.format(lib, var, lib, LIB)
+    for lib in library:
+        lib_table_new.append(
+            '  (lib (name {})(type {})(uri {}/{}{})(options "")(descr ""))\n'.format(
+                lib,
+                'Legacy' if extension == LIB else 'KiCad',
+                var,
+                lib,
+                extension
             )
-    else:
-        for lib in lib:
-            lib_table_new.append(
-                '  (lib (name {})(type KiCad)(uri "{}/{}{}")(options "")(descr ""))\n'.format(lib, var, lib, MOD)
-            )
+        )
 
     lib_table_new.append(')\n')
 
@@ -101,8 +101,8 @@ if __name__ == '__main__':
 
     environment_variables(path_kicad_common)
 
-    lib_table(path_sym_lib_table, kicad_library, 'KICAD_SYMBOL_DIR')
-    lib_table(path_fp_lib_table, kicad_modules, 'KISYSMOD')
+    lib_table(path_sym_lib_table, kicad_library, 'KICAD_SYMBOL_DIR', LIB)
+    lib_table(path_fp_lib_table, kicad_modules, 'KISYSMOD', MOD)
 
-    lib_table(path_sym_lib_table, klib_library, 'WSYM')
-    lib_table(path_fp_lib_table, klib_modules, 'WMOD')
+    lib_table(path_sym_lib_table, klib_library, 'WSYM', LIB)
+    lib_table(path_fp_lib_table, klib_modules, 'WMOD', MOD)
