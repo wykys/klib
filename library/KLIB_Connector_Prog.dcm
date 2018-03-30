@@ -36,12 +36,6 @@ K AVR TPI, connector
 F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf
 $ENDCMP
 #
-$CMP Conn_UART
-D Debug connector
-K UART, USART, Connector
-F ~
-$ENDCMP
-#
 $CMP ST_LINK_V2_02X05
 D china copy ST-LINK/V2, STM32, STM8, 02X10
 K SWD, SWIM, ST-LINK, connector
@@ -52,6 +46,18 @@ $CMP ST_LINK_V2_02X10
 D connector original ST-LINK/V2, STM32, STM8, 02X10
 K SWD, SWIM, ST-LINK, connector
 F http://www.st.com/content/ccc/resource/technical/document/user_manual/65/e0/44/72/9e/34/41/8d/DM00026748.pdf/files/DM00026748.pdf/jcr:content/translations/en.DM00026748.pdf
+$ENDCMP
+#
+$CMP SWD_01X04
+D STM32 programing connector
+K debug flash
+F ~
+$ENDCMP
+#
+$CMP UART_01X03
+D Debug connector
+K UART, USART, Connector
+F ~
 $ENDCMP
 #
 #End Doc Library
