@@ -6,7 +6,7 @@ EESchema-LIBRARY Version 2.4
 DEF Bolt H 0 0 N N 1 F N
 F0 "H" 100 50 50 H V L CNN
 F1 "Bolt" 100 -50 50 H V L CNN
-F2 "KLIB_Mech:Bolt_M3" 100 -150 50 H I L CNN
+F2 "KLIB_Mechanical:Bolt_M3" 100 -150 50 H I L CNN
 F3 "" 125 -75 50 H I C CNN
 $FPLIST
  *Bolt*
@@ -28,7 +28,7 @@ ENDDEF
 DEF Bolt_Pad H 0 0 N N 1 F N
 F0 "H" 100 50 50 H V L CNN
 F1 "Bolt_Pad" 100 -50 50 H V L CNN
-F2 "KLIB_Mech:Bolt_M3_Pad" 100 -150 50 H I L CNN
+F2 "KLIB_Mechanical:Bolt_M3_Pad" 100 -150 50 H I L CNN
 F3 "" 0 -300 50 H I C CNN
 $FPLIST
  *Bolt*
