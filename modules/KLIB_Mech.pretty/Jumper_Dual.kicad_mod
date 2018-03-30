@@ -1,8 +1,8 @@
-(module jumper_dual (layer F.Cu) (tedit 599D889F)
+(module Jumper_Dual (layer F.Cu) (tedit 5ABD92CB)
   (fp_text reference REF** (at 0 1.27) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (fp_text value jumper_dual (at 0 -1.27) (layer F.Fab) hide
+  (fp_text value Jumper_Dual (at 0 -1.27) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (pad 1 smd trapezoid (at -1.25 0) (size 1 1) (rect_delta 0 0.5 ) (layers F.Cu F.Paste F.Mask))
