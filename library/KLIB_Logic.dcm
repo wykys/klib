@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 74AHC1G08
+D one gate logic, 2V to 5V5, and
+K and single gate
+F http://www.ti.com/lit/ds/symlink/sn74ahc1g08.pdf
+$ENDCMP
+#
+#End Doc Library
