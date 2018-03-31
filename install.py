@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # wykys
 # automation of installation and administration of KLIB in KiCAD
+import difflib
 import os
 import sys
 
@@ -55,6 +56,11 @@ def error(content):
     return content
 
 
+@log('WARNING', Fore.YELLOW, sys.stderr)
+def warning(content):
+    return content
+
+
 @log('OK', Fore.GREEN, sys.stdout)
 def ok(content):
     return content
@@ -78,6 +84,27 @@ def get_libraries(path, extension):
     )
 
 
+def diff(text1_lines, text2_lines):
+    differ = difflib.Differ()
+    added_lines = 0
+    removed_lines = 0
+
+    for line in differ.compare(text1_lines, text2_lines):
+        if line[0] == '+':
+            added_lines += 1
+            line = '{}{}+{}{}{}'.format(Fore.GREEN, Style.BRIGHT, Style.NORMAL, line[1:], Style.RESET_ALL)
+            print(line, end='')
+        elif line[0] == '-':
+            line = '{}{}-{}{}{}'.format(Fore.RED, Style.BRIGHT, Style.NORMAL, line[1:], Style.RESET_ALL)
+            removed_lines += 1
+            print(line, end='')
+
+    if added_lines > 0 or removed_lines > 0:
+        info('change statistics')
+        print('    {}{}+++{} {}'.format(Fore.GREEN, Style.BRIGHT, Style.RESET_ALL, added_lines))
+        print('    {}{}---{} {}'.format(Fore.RED, Style.BRIGHT, Style.RESET_ALL, removed_lines))
+
+
 def environment_variables(path):
     if not os.path.exists(path):
         raise NotExist(path)
@@ -92,11 +119,13 @@ def environment_variables(path):
         ))
     ]
 
-    for key in KICAD:
+    for key in sorted([key for key in KICAD]):
         config_new.append('{}={}\n'.format(key, KICAD[key]))
 
-    for key in KLIB:
+    for key in sorted([key for key in KLIB]):
         config_new.append('{}={}/{}\n'.format(key, path_klib, KLIB[key]))
+
+    diff(config_old, config_new)
 
     with open(path, 'w') as fw:
         fw.writelines(config_new)
@@ -110,6 +139,9 @@ def lib_table(path, library, var, extension):
 
     with open(path, 'r') as fr:
         lib_table_old = fr.readlines()
+        if len(lib_table_old) < 2 or lib_table_old[-1] != ')\n' or not 'lib_table' in lib_table_old[0]:
+            warning('{} was corrupted, created a new empty table'.format(path))
+            lib_table_old = ['(sym_lib_table\n', ')\n'] if extension == LIB else ['(fp_lib_table\n', ')\n']
 
     lib_table_new = [line for line in lib_table_old if not var in line][:-1]
     var = '${{{}}}'.format(var)
@@ -131,6 +163,7 @@ def lib_table(path, library, var, extension):
         fw.writelines(lib_table_new)
 
     ok('{} is updated'.format(path))
+    return (lib_table_old, lib_table_new)
 
 
 if __name__ == '__main__':
@@ -145,12 +178,17 @@ if __name__ == '__main__':
         environment_variables(path_kicad_common)
 
         info('update official kicad library')
-        lib_table(path_sym_lib_table, kicad_library, 'KICAD_SYMBOL_DIR', LIB)
-        lib_table(path_fp_lib_table, kicad_modules, 'KISYSMOD', MOD)
+        lib_old = lib_table(path_sym_lib_table, kicad_library, 'KICAD_SYMBOL_DIR', LIB)[0]
+        mod_old = lib_table(path_fp_lib_table, kicad_modules, 'KISYSMOD', MOD)[0]
 
         info('update klib')
-        lib_table(path_sym_lib_table, klib_library, 'WSYM', LIB)
-        lib_table(path_fp_lib_table, klib_modules, 'WMOD', MOD)
+        lib_new = lib_table(path_sym_lib_table, klib_library, 'WSYM', LIB)[1]
+        mod_new = lib_table(path_fp_lib_table, klib_modules, 'WMOD', MOD)[1]
+
+        info('diff sym-lib-table')
+        diff(lib_old, lib_new)
+        info('diff fp-lib-table')
+        diff(mod_old, mod_new)
 
     except NotExist as e:
         error(str(e))
