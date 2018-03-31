@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP RC1602B
+D LCD 16x2 Alphanumeric blue backlight, 3 or 5 V VDD, negative
+K display LCD dot-matrix
+F https://www.tme.eu/cz/Document/80bdbedf6bf0a19df5cdc5be2a2c033c/RC1602B-LLB-JWVE.pdf
+$ENDCMP
+#
+#End Doc Library
