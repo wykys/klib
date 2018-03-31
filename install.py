@@ -168,11 +168,11 @@ def lib_table(path, library, var, extension):
 
 if __name__ == '__main__':
     try:
-        klib_library = get_libraries(KLIB['WSYM'], LIB)
-        klib_modules = get_libraries(KLIB['WMOD'], MOD)
-
         kicad_library = get_libraries(KICAD['KICAD_SYMBOL_DIR'], LIB)
         kicad_modules = get_libraries(KICAD['KISYSMOD'], MOD)
+
+        klib_library = get_libraries(KLIB['WSYM'], LIB)
+        klib_modules = get_libraries(KLIB['WMOD'], MOD)
 
         info('update enviroment variables')
         environment_variables(path_kicad_common)
