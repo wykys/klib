@@ -85,6 +85,17 @@ def get_libraries(path, extension):
 
 
 def diff(text1_lines, text2_lines):
+    def diff_change_log(color, operation, content):
+        print(
+            '{}{}{}{}{}{}'.format(
+                color, Style.BRIGHT, operation, Style.NORMAL, content, Style.RESET_ALL
+            ),
+            end=''
+        )
+
+    def diff_stat_log(tag, color, number):
+        info('{}{}{}{} {}'.format(color, Style.BRIGHT, tag, Style.RESET_ALL, number))
+
     differ = difflib.Differ()
     added_lines = 0
     removed_lines = 0
@@ -92,17 +103,16 @@ def diff(text1_lines, text2_lines):
     for line in differ.compare(text1_lines, text2_lines):
         if line[0] == '+':
             added_lines += 1
-            line = '{}{}+{}{}{}'.format(Fore.GREEN, Style.BRIGHT, Style.NORMAL, line[1:], Style.RESET_ALL)
-            print(line, end='')
+            diff_change_log(Fore.GREEN, '+', line[1:])
+
         elif line[0] == '-':
-            line = '{}{}-{}{}{}'.format(Fore.RED, Style.BRIGHT, Style.NORMAL, line[1:], Style.RESET_ALL)
+            diff_change_log(Fore.RED, '-', line[1:])
             removed_lines += 1
-            print(line, end='')
 
     if added_lines > 0 or removed_lines > 0:
         info('change statistics')
-        print('    {}{}+++{} {}'.format(Fore.GREEN, Style.BRIGHT, Style.RESET_ALL, added_lines))
-        print('    {}{}---{} {}'.format(Fore.RED, Style.BRIGHT, Style.RESET_ALL, removed_lines))
+        diff_stat_log('+++', Fore.GREEN, added_lines)
+        diff_stat_log('---', Fore.RED, removed_lines)
 
 
 def environment_variables(path):
