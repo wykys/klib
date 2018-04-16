@@ -8,7 +8,7 @@ $ENDCMP
 #
 $CMP OSRB38C9BA
 D 37.8kHz, IR, receiver
-K IR
+K IR Infrared Receiver Module
 F http://www.tme.eu/cz/Document/777fdf21e0fba3fd5c036ef95756460c/OSRB38C9BA.pdf
 $ENDCMP
 #
