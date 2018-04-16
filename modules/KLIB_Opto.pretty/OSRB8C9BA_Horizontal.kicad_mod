@@ -1,4 +1,4 @@
-(module OSRB8C9BA_Horizontal (layer F.Cu) (tedit 5AD3F2B4)
+(module OSRB8C9BA_Horizontal (layer F.Cu) (tedit 5AD3F806)
   (descr https://www.tme.eu/cz/Document/777fdf21e0fba3fd5c036ef95756460c/OSRB38C9BA.pdf)
   (tags "Infrared Receiver Module")
   (fp_text reference REF** (at 0 -11.58) (layer F.SilkS)
@@ -41,7 +41,7 @@
   (pad 1 thru_hole rect (at -2.54 0) (size 2 2) (drill 0.8) (layers *.Cu *.Mask))
   (pad 2 thru_hole circle (at 0 0) (size 2 2) (drill 0.8) (layers *.Cu *.Mask))
   (pad 3 thru_hole circle (at 2.54 0) (size 2 2) (drill 0.8) (layers *.Cu *.Mask))
-  (model "$(W3D)/KLIB_Opto.3dshapes/OSRB38C9BA_Horizontal.step"
+  (model "$(W3D)/KLIB_Opto.3dshapes/OSRB38C9BA_Horizontal.wrl"
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
