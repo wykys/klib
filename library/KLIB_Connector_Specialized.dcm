@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP N42GK-04
+D signal connector, 600V, 9A
+K NINIGI MOLEX 2X2
+F https://www.tme.eu/cz/details/n42gk-04/signalove-konektory-raster-420mm/ninigi/
+$ENDCMP
+#
+#End Doc Library
