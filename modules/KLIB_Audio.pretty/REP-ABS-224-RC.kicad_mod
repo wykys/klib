@@ -1,4 +1,4 @@
-(module REP-ABS-224-RC (layer F.Cu) (tedit 5AD89ED3)
+(module REP-ABS-224-RC (layer F.Cu) (tedit 5AD89F89)
   (descr http://www.farnell.com/datasheets/1660949.pdf)
   (tags speaker)
   (fp_text reference REF** (at -12 0 90) (layer F.SilkS)
@@ -72,7 +72,7 @@
   (pad 3 thru_hole oval (at -11 -18) (size 6 3) (drill 2 (offset 1 0)) (layers *.Cu *.Mask))
   (pad 3 thru_hole oval (at 11 18) (size 6 3) (drill 2 (offset -1 0)) (layers *.Cu *.Mask))
   (pad 3 thru_hole oval (at -11 18) (size 6 3) (drill 2 (offset 1 0)) (layers *.Cu *.Mask))
-  (model "$(W3D)/KLIB_Audio.3dshapes/ABS-224-RC.step"
+  (model "$(W3D)/KLIB_Audio.3dshapes/ABS-224-RC.wrl"
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
