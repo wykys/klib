@@ -29,7 +29,7 @@ For the correct operation of this script, it's important to run the script from 
 ## Types for users:
 
 - [ ] the variables are used in the following ways: `$(WSYM)/path_to_lib`
-- [ ] `${KIPRJMOD}` is path to current KiCAD project folder
+- [ ] `$(KIPRJMOD)` is path to current KiCAD project folder
 
 
 ## [STEP to WRL](https://github.com/SchrodingersGat/freecad-scripts)
