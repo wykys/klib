@@ -22,7 +22,7 @@ $(VENV):
 	$(PIP_INSTALL)
 	$(PIP_FRERZE)
 
-upgrade_venv:
+venv:
 	rm -rf $(VENV)
 	make $(VENV)
 
@@ -31,10 +31,35 @@ update_kicad_settings: $(VENV)
 	$(VENV_ACTIVATE)
 	./update_kicad_settings.py
 
+install: $(VENV) update_kicad_settings
+	git clone git@github.com:SchrodingersGat/freecad-scripts.git
+	sudo apt-get install freecad
+
+.ONESHELL:
+step_to_wrl:
+	cd freecad-scripts
+	freecad $(step) step2wrl.FCMacro
+
 .ONESHELL:
 run: $(VENV)
 	$(VENV_ACTIVATE)
 	./$(script)
 
 help:
-	@echo "run script=your_script.py"
+	@echo "KLIB HELP:"
+	@echo ""
+	@echo "created or upgrade python enviroment:"
+	@echo "    make venv"
+	@echo ""
+	@echo "install KLIB:"
+	@echo "    make install"
+	@echo ""
+	@echo "update KiCAD settings:"
+	@echo "    make update_kicad_settings or make"
+	@echo ""
+	@echo "STEP to WRL:"
+	@echo "    make step_to_wrl step=your_step_file.step"
+	@echo ""
+	@echo "run script in KLIB python enviroment:"
+	@echo "    make run script=your_script.py"
+	@echo ""

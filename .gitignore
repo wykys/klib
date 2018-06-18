@@ -3,4 +3,5 @@
 *.tags*
 
 .venv
+freecad-scripts
 tmp
