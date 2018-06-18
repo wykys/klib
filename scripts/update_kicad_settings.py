@@ -7,24 +7,26 @@ import sys
 
 from colorama import Back, Fore, Style
 
+KLIB_PATH = os.path.expanduser('~') + '/projects/klib/'
+KICAD_PATH = '/usr/share/kicad/'
+
 KLIB = {
-    'W3D': 'packages3d',
-    'WMOD': 'modules',
-    'WSYM': 'library',
+    'W3D': KLIB_PATH + 'packages3d',
+    'WMOD': KLIB_PATH + 'modules',
+    'WSYM': KLIB_PATH + 'library',
 }
 
 KICAD = {
-    'KISYSMOD': '/usr/share/kicad/modules',
-    'KISYS3DMOD': '/usr/share/kicad/modules/packages3d',
-    'KICAD_PTEMPLATES': '/usr/share/kicad/template',
-    'KICAD_SYMBOL_DIR': '/usr/share/kicad/library',
+    'KISYSMOD': KICAD_PATH + 'modules',
+    'KISYS3DMOD': KICAD_PATH + 'modules/packages3d',
+    'KICAD_PTEMPLATES': KICAD_PATH + 'template',
+    'KICAD_SYMBOL_DIR': KICAD_PATH + 'library',
 }
 
 LIB = '.lib'
 MOD = '.pretty'
 
 
-path_klib = os.getcwd()
 path_kicad_common = os.path.expanduser('~') + '/.config/kicad/kicad_common'
 path_fp_lib_table = os.path.expanduser('~') + '/.config/kicad/fp-lib-table'
 path_sym_lib_table = os.path.expanduser('~') + '/.config/kicad/sym-lib-table'
@@ -133,7 +135,7 @@ def environment_variables(path):
         config_new.append('{}={}\n'.format(key, KICAD[key]))
 
     for key in sorted([key for key in KLIB]):
-        config_new.append('{}={}/{}\n'.format(key, path_klib, KLIB[key]))
+        config_new.append('{}={}\n'.format(key, KLIB[key]))
 
     diff(config_old, config_new)
 
@@ -145,7 +147,8 @@ def environment_variables(path):
 
 def lib_table(path, library, var, extension):
     if not os.path.exists(path):
-        raise NotExist(path)
+        fw = open(path, 'w')
+        fw.close()
 
     with open(path, 'r') as fr:
         lib_table_old = fr.readlines()
