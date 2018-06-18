@@ -58,7 +58,7 @@ If it does, it removes the current Python environment in the next step creating 
 make venv
 ```
 
-### STEP_TO_WRL
+### STEP TO WRL
 Converts the STEP file to a WRL file. It uses [FreeCAD](https://www.freecadweb.org/) and [FreeCAD scripts](https://github.com/SchrodingersGat/freecad-scripts).
 
 #### Use:
