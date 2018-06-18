@@ -12,7 +12,7 @@ VENV = .venv
 VENV_CREATE = $(PYTHON) -m venv $(VENV)
 VENV_ACTIVATE = . .venv/bin/activate
 
-all: set_venv
+all: update_kicad_settings
 
 .ONESHELL:
 $(VENV):
