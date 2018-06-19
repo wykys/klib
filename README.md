@@ -9,10 +9,8 @@ WSYM = path_to_klib/library
 WMOD = path_to_klib/footprints
 W3D  = path_to_klib/packeges3d
 ```
-You can use `install.py`
 
-
-## Instalation (for Linux)
+## Installation (for GNU/Linux based on Debian)
 Requires `python3+`
 ```bash
 git clone git@github.com:wykys/klib.git
@@ -32,7 +30,7 @@ make help
 ```
 
 ### INSTALL
-Creates the python environment needed for some scripts. Closes third-party repositories. Install the necessary packages. Configures the KiCAD settings. Requires root rights.
+Creates the python environment needed for some scripts. Closes third-party repositories. Install the necessary packages. Configures the KiCAD settings. Requires root rights. It also creates `klib-chacklib` and `klib-checkmod` links for KLC testing.
 
 #### Use:
 ```bash
