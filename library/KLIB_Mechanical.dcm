@@ -18,4 +18,10 @@ K box package
 F ~
 $ENDCMP
 #
+$CMP Fiducial
+D Marker on PCB
+K Fiducial
+F ~
+$ENDCMP
+#
 #End Doc Library
