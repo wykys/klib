@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP THS1230IDWG4
+D 3.3-V, 12-BIT, 30 MSPS, low-power analog-to-digital converter with power down
+K ADC
+F https://datasheet.octopart.com/THS1230IDWG4-Texas-Instruments-datasheet-152278.pdf
+$ENDCMP
+#
+#End Doc Library
