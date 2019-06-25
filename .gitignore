@@ -8,3 +8,6 @@ tmp
 .venv
 freecad-scripts
 kicad-library-utils
+
+# VS Code
+.vscde
