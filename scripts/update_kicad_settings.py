@@ -14,12 +14,13 @@ KLIB = {
     'W3D': KLIB_PATH + 'packages3d',
     'WMOD': KLIB_PATH + 'modules',
     'WSYM': KLIB_PATH + 'library',
+    'WSPI': KLIB_PATH + 'spice',
 }
 
 KICAD = {
     'KISYSMOD': KICAD_PATH + 'modules',
     'KISYS3DMOD': KICAD_PATH + 'modules/packages3d',
-    'KICAD_PTEMPLATES': KICAD_PATH + 'template',
+    'KICAD_TEMPLATE_DIR': KICAD_PATH + 'template',
     'KICAD_SYMBOL_DIR': KICAD_PATH + 'library',
 }
 
