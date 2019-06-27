@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AD8132
+D Low Cost, High Speed Differential Amplifier, GBP 350MHz, SR 1200V/us
+K amp, dido
+F https://www.mouser.com/datasheet/2/609/AD8132-1502099.pdf
+$ENDCMP
+#
+#End Doc Library
