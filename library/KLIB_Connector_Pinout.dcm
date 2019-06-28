@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Pinout_Altera_China_Dev_Bottom_Connector
+D Bottom connector development board for Cyclone IV fitted with EP4CE6E22C8N. Top view.
+K Altera pinoutm development
+F https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-iv/cyclone4-handbook.pdf
+$ENDCMP
+#
+#End Doc Library
