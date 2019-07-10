@@ -56,6 +56,9 @@ If it does, it removes the current Python environment in the next step creating 
 make venv
 ```
 
+### STL TO X3D
+I use [Blender](https://www.blender.org/) to convert STL to X3D. I have created a Blender API script that will make the necessary transformations before exporting to X3D to correctly display the output in KiCAD.
+
 ### STEP TO WRL
 Converts the STEP file to a WRL file. It uses [FreeCAD](https://www.freecadweb.org/) and [FreeCAD scripts](https://github.com/SchrodingersGat/freecad-scripts).
 
