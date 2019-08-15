@@ -8,7 +8,16 @@ import sys
 from colorama import Back, Fore, Style
 
 KLIB_PATH = os.path.expanduser('~') + '/projects/klib/'
+
 KICAD_PATH = '/usr/share/kicad/'
+PATH_KICAD_COMMON = os.path.expanduser('~') + '/.config/kicad/kicad_common'
+PATH_FP_LIB_TABLE = os.path.expanduser('~') + '/.config/kicad/fp-lib-table'
+PATH_SYM_LIB_TABLE = os.path.expanduser('~') + '/.config/kicad/sym-lib-table'
+if not os.path.isdir(KICAD_PATH):
+    KICAD_PATH = KICAD_PATH = '/usr/share/kicad-nightly/'
+    PATH_KICAD_COMMON = os.path.expanduser('~') + '/.config/kicadnightly/kicad_common'
+    PATH_FP_LIB_TABLE = os.path.expanduser('~') + '/.config/kicadnightly/fp-lib-table'
+    PATH_SYM_LIB_TABLE = os.path.expanduser('~') + '/.config/kicadnightly/sym-lib-table'
 
 KLIB = {
     'W3D': KLIB_PATH + 'packages3d',
@@ -26,11 +35,6 @@ KICAD = {
 
 LIB = '.lib'
 MOD = '.pretty'
-
-
-path_kicad_common = os.path.expanduser('~') + '/.config/kicad/kicad_common'
-path_fp_lib_table = os.path.expanduser('~') + '/.config/kicad/fp-lib-table'
-path_sym_lib_table = os.path.expanduser('~') + '/.config/kicad/sym-lib-table'
 
 
 class NotExist(Exception):
@@ -189,15 +193,15 @@ if __name__ == '__main__':
         klib_modules = get_libraries(KLIB['WMOD'], MOD)
 
         info('update enviroment variables')
-        environment_variables(path_kicad_common)
+        environment_variables(PATH_KICAD_COMMON)
 
         info('update official kicad library')
-        lib_old = lib_table(path_sym_lib_table, kicad_library, 'KICAD_SYMBOL_DIR', LIB)[0]
-        mod_old = lib_table(path_fp_lib_table, kicad_modules, 'KISYSMOD', MOD)[0]
+        lib_old = lib_table(PATH_SYM_LIB_TABLE, kicad_library, 'KICAD_SYMBOL_DIR', LIB)[0]
+        mod_old = lib_table(PATH_FP_LIB_TABLE, kicad_modules, 'KISYSMOD', MOD)[0]
 
         info('update klib')
-        lib_new = lib_table(path_sym_lib_table, klib_library, 'WSYM', LIB)[1]
-        mod_new = lib_table(path_fp_lib_table, klib_modules, 'WMOD', MOD)[1]
+        lib_new = lib_table(PATH_SYM_LIB_TABLE, klib_library, 'WSYM', LIB)[1]
+        mod_new = lib_table(PATH_FP_LIB_TABLE, klib_modules, 'WMOD', MOD)[1]
 
         info('diff sym-lib-table')
         diff(lib_old, lib_new)
