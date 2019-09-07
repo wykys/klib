@@ -3,7 +3,6 @@ klib-update.sh
 
 # list of folders
 .venv
-freecad-scripts
 kicad-library-utils
 
 # VS Code
