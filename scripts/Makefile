@@ -34,12 +34,17 @@ update_kicad_settings: $(VENV)
 .ONESHELL:
 install: $(VENV) update_kicad_settings
 	git clone git@github.com:KiCad/kicad-library-utils.git
-	git clone git@github.com:SchrodingersGat/freecad-scripts.git
-	sudo apt-get install freecad
 	PWD=pwd
-	cd /usr/bin
-	sudo ln -s $(PWD)/kicad-library-utils/schlib/checklib.py klib-checklib
-	sudo ln -s $(PWD)/kicad-library-utils/pcb/check_kicad_mod.py klib-checkmod
+
+	echo "#!/usr/bin/env bash" > klib-update.sh
+	echo "cd $(PWD)" >> klib-update.sh
+	echo "make update_kicad_settings" >> klib-update.sh
+	chmod +x klib-update.sh
+
+	cd ~/.local/bin
+	ln -s $(PWD)/kicad-library-utils/schlib/checklib.py klib-checklib
+	ln -s $(PWD)/kicad-library-utils/pcb/check_kicad_mod.py klib-checkmod
+	ln -s $(PWD)/klib-update.sh klib-update
 
 .ONESHELL:
 step_to_wrl:
