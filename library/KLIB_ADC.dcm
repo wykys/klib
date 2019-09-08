@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP AD9214
+D 3.3-V, 10-BIT, 65/80/105 MSPS, low-power analog-to-digital converter with power down
+K ADC analog digital converter
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD9214.pdf
+$ENDCMP
+#
 $CMP THS1230IDWG4
 D 3.3-V, 12-BIT, 30 MSPS, low-power analog-to-digital converter with power down
 K ADC
