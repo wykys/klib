@@ -6,4 +6,10 @@ K amp, dido
 F https://www.mouser.com/datasheet/2/609/AD8132-1502099.pdf
 $ENDCMP
 #
+$CMP ADA4930-1
+D Is very low noise, low distortion, high speed differential amplifiers. They are an ideal choice for driving 1.8 V high performance ADCs with resolutions up to 14 bits from dc to 70 MHz.
+K differential amplifier
+F https://www.analog.com/media/en/technical-documentation/data-sheets/ADA4930-1_4930-2.pdf
+$ENDCMP
+#
 #End Doc Library
