@@ -6,6 +6,12 @@ K ADC analog digital converter
 F https://www.analog.com/media/en/technical-documentation/data-sheets/AD9214.pdf
 $ENDCMP
 #
+$CMP AD9255
+D 1.8-V 14-BIT analog digital converter with LVDS or CMOS output a SPI configuration 80/105/125 MSPS
+K ADC
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD9255.pdf
+$ENDCMP
+#
 $CMP THS1230IDWG4
 D 3.3-V, 12-BIT, 30 MSPS, low-power analog-to-digital converter with power down
 K ADC
