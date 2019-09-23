@@ -7,16 +7,16 @@ DEF Pinout_Altera_China_Dev_Bottom_Connector J 0 20 Y Y 1 F N
 F0 "J" 0 1700 50 H V C CNN
 F1 "Pinout_Altera_China_Dev_Bottom_Connector" 0 1600 50 H V C CNN
 F2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical" 0 1800 50 H I C CNN
-F3 "" 2700 1700 50 H I C CNN
+F3 "" 0 1900 50 H I C CNN
 $FPLIST
  Pin*2x*P2.54mm*Vertical*
 $ENDFPLIST
 DRAW
-T 0 -540 1400 50 0 0 0 "BANK 2" Normal 1 L C
-T 0 -540 1000 50 0 0 0 "BANK 3" Normal 1 L C
-T 0 -540 300 50 0 0 0 "BANK 4" Normal 1 L C
-T 0 -540 -600 50 0 0 0 "BANK 5" Normal 1 L C
-T 0 -540 -900 50 0 0 0 "BANK 6" Normal 1 C C
+T 0 -680 1400 50 0 0 0 "BANK 2" Normal 1 L C
+T 0 -680 1000 50 0 0 0 "BANK 3" Normal 1 L C
+T 0 -680 300 50 0 0 0 "BANK 4" Normal 1 L C
+T 0 -680 -600 50 0 0 0 "BANK 5" Normal 1 L C
+T 0 -680 -900 50 0 0 0 "BANK 6" Normal 1 L C
 S -700 1500 700 -1500 0 1 10 f
 P 2 0 0 0 -700 -850 700 -850 N
 P 2 0 0 0 -700 -550 700 -550 N
