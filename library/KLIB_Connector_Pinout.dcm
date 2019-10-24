@@ -2,8 +2,20 @@ EESchema-DOCLIB  Version 2.0
 #
 $CMP Pinout_Altera_China_Dev_Bottom_Connector
 D Bottom connector development board for Cyclone IV fitted with EP4CE6E22C8N. Top view.
-K Altera pinoutm development
+K Altera pinout development
 F https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-iv/cyclone4-handbook.pdf
+$ENDCMP
+#
+$CMP Pinout_XC7S15_J1
+D Spartan-7 XC7S15 QMTECH kit pinout J1 connector. Top view.
+K Spartan kit pinout
+F https://github.com/ChinaQMTECH/SPARTAN7_XC7S15_FTGB196
+$ENDCMP
+#
+$CMP Pinout_XC7S15_J2
+D Spartan-7 XC7S15 QMTECH kit pinout J2 connector. Top view.
+K Spartan kit pinout
+F https://github.com/ChinaQMTECH/SPARTAN7_XC7S15_FTGB196
 $ENDCMP
 #
 #End Doc Library
