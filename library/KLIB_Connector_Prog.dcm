@@ -36,6 +36,18 @@ K AVR TPI, connector
 F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf
 $ENDCMP
 #
+$CMP P6316_GROUP1_02X08
+D The P6316 digital probe connects the Tektronix MSO2000 Series of mixed-signal oscilloscopes to digital buses and signals on your target system.
+K logic probe
+F https://www.tek.com/oscilloscope/p6316-manual/p6316
+$ENDCMP
+#
+$CMP P6316_GROUP2_02X08
+D The P6316 digital probe connects the Tektronix MSO2000 Series of mixed-signal oscilloscopes to digital buses and signals on your target system.
+K logic probe
+F https://www.tek.com/oscilloscope/p6316-manual/p6316
+$ENDCMP
+#
 $CMP ST_LINK_V2_02X05
 D china copy ST-LINK/V2, STM32, STM8, 02X10
 K SWD, SWIM, ST-LINK, connector
