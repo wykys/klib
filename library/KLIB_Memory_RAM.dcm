@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IS61WV12816EDBLL-10TLI
+D 128K x 16 high speed asynchronous CMOS static RAM with ECC
+K RAM SRAM
+F http://www.issi.com/WW/pdf/61-64WV12816EDBLL.pdf
+$ENDCMP
+#
+#End Doc Library
