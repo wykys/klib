@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP STM32G030F6Px
+D Mainstream Value-Line Arm Cortex-M0+ MCU with 32 Kbytes of Flash memory, 8 Kbytes RAM, 64 MHz CPU, 2x USART, timers, ADC, comm. I/F, 2-3.6V
+K MCU MPU STM32
+F https://www.st.com/resource/en/datasheet/stm32g030f6.pdf
+$ENDCMP
+#
+#End Doc Library
