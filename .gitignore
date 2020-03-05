@@ -27,3 +27,5 @@ fp-info-cache
 
 # VS Code
 .vscde
+
+plugins/
