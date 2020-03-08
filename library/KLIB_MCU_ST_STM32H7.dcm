@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP STM32H750VBTx
+D ARM Cortex-M7 MCU, 128KB flash, 1000KB RAM, 400MHz, 1.7-3.6V, 82 GPIO, LQFP-100
+K ARM Cortex-M7 STM32H7 STM32H750
+F https://www.st.com/resource/en/datasheet/stm32h750ib.pdf
+$ENDCMP
+#
+#End Doc Library
