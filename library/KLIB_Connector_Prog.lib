@@ -7,7 +7,7 @@ DEF AVR_ISP_01X06 J 0 40 Y Y 1 F N
 F0 "J" -250 350 50 H V L CNN
 F1 "AVR_ISP_01X06" -50 -475 50 H V C CNN
 F2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" -50 -550 50 H I C CNN
-F3 "" 400 400 50 H I C CNN
+F3 "~" 400 400 50 H I C CNN
 $FPLIST
  *Header*
 $ENDFPLIST
@@ -28,7 +28,7 @@ DEF AVR_ISP_02X03 J 0 40 Y Y 1 F N
 F0 "J" -250 250 50 H V L CNN
 F1 "AVR_ISP_02X03" 0 -275 50 H V C CNN
 F2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" 0 -350 50 H I C CNN
-F3 "" 650 -450 50 H I C CNN
+F3 "~" 650 -450 50 H I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -51,7 +51,7 @@ DEF AVR_ISP_02X05 J 0 40 Y Y 1 F N
 F0 "J" -250 350 50 H V L CNN
 F1 "AVR_ISP_02X05" 0 -375 50 H V C CNN
 F2 "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical" 0 -450 50 H I C CNN
-F3 "" 650 -450 50 H I C CNN
+F3 "~" 650 -450 50 H I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -78,7 +78,7 @@ DEF Conn_AVR_ISP_02X03 J 0 40 Y Y 1 F N
 F0 "J" 75 500 50 H V L CNN
 F1 "Conn_AVR_ISP_02X03" 75 425 50 H V L CNN
 F2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" 75 -425 50 H I L CNN
-F3 "" -750 -1150 50 H I C CNN
+F3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf" -750 -1150 50 H I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -196,7 +196,7 @@ DEF Conn_AVR_PDI_02X03 J 0 40 Y Y 1 F N
 F0 "J" 75 500 50 H V L CNN
 F1 "Conn_AVR_PDI_02X03" 75 425 50 H V L CNN
 F2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" 75 -325 50 H I L CNN
-F3 "" -750 -1150 50 H I C CNN
+F3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf" -750 -1150 50 H I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -292,7 +292,7 @@ DEF Conn_AVR_TPI_02X03 J 0 40 Y Y 1 F N
 F0 "J" 75 500 50 H V L CNN
 F1 "Conn_AVR_TPI_02X03" 75 425 50 H V L CNN
 F2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" 75 -325 50 H I L CNN
-F3 "" -750 -1150 50 H I C CNN
+F3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf" -750 -1150 50 H I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -383,13 +383,35 @@ X GND 6 0 -400 150 U 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
+# DIGILENT_JTAG_HS2_01X06
+#
+DEF DIGILENT_JTAG_HS2_01X06 J 0 20 Y Y 1 F N
+F0 "J" -250 350 50 H V L CNN
+F1 "DIGILENT_JTAG_HS2_01X06" -50 -475 50 H V C CNN
+F2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" 0 -600 50 H I C CNN
+F3 "" 0 -700 50 H I C CNN
+$FPLIST
+ *Header*
+$ENDFPLIST
+DRAW
+T 900 -150 -50 50 0 0 0 JTAG Normal 1 C C
+S 100 -400 -250 300 0 1 10 f
+X VTG 1 200 200 100 L 50 50 1 1 W
+X GND 2 200 100 100 L 50 50 1 1 W
+X TCK 3 200 0 100 L 50 50 1 1 O
+X TDO 4 200 -100 100 L 50 50 1 1 I
+X TDI 5 200 -200 100 L 50 50 1 1 O
+X TMS 6 200 -300 100 L 50 50 1 1 O
+ENDDRAW
+ENDDEF
+#
 # P6316_GROUP1_02X08
 #
 DEF P6316_GROUP1_02X08 J 0 20 Y Y 1 F N
 F0 "J" 0 700 50 H V C CNN
 F1 "P6316_GROUP1_02X08" 0 600 50 H V C CNN
 F2 "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical" 0 -700 50 H I C CNN
-F3 "" 0 -600 50 H I C CNN
+F3 "https://www.tek.com/oscilloscope/p6316-manual/p6316" 0 -600 50 H I C CNN
 $FPLIST
  PinHeader?2x*P2.54mm?Vertical*
 $ENDFPLIST
@@ -421,7 +443,7 @@ DEF P6316_GROUP2_02X08 J 0 20 Y Y 1 F N
 F0 "J" 0 700 50 H V C CNN
 F1 "P6316_GROUP2_02X08" 0 600 50 H V C CNN
 F2 "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical" 0 -700 50 H I C CNN
-F3 "" 0 -600 50 H I C CNN
+F3 "https://www.tek.com/oscilloscope/p6316-manual/p6316" 0 -600 50 H I C CNN
 $FPLIST
  PinHeader?2x*P2.54mm?Vertical*
 $ENDFPLIST
@@ -453,7 +475,7 @@ DEF ST_LINK_V2_02X05 J 0 40 Y Y 1 F N
 F0 "J" -300 350 50 H V L CNN
 F1 "ST_LINK_V2_02X05" 0 -375 50 H V C CNN
 F2 "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical" 0 -450 50 H I C CNN
-F3 "" 600 -450 50 H I C CNN
+F3 "~" 600 -450 50 H I C CNN
 $FPLIST
  *IDC*
  *Header*
@@ -480,7 +502,7 @@ DEF ST_LINK_V2_02X10 J 0 40 Y Y 1 F N
 F0 "J" -350 550 50 H V L CNN
 F1 "ST_LINK_V2_02X10" 0 -675 50 H V C CNN
 F2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" 0 -750 50 H I C CNN
-F3 "" -600 -300 50 H I C CNN
+F3 "http://www.st.com/content/ccc/resource/technical/document/user_manual/65/e0/44/72/9e/34/41/8d/DM00026748.pdf/files/DM00026748.pdf/jcr:content/translations/en.DM00026748.pdf" -600 -300 50 H I C CNN
 DRAW
 S -350 500 350 -600 0 1 10 f
 P 4 0 1 0 -350 -125 -325 -125 -325 25 -350 25 N
@@ -513,7 +535,7 @@ DEF SWD_01X04 J 0 40 Y Y 1 F N
 F0 "J" -250 350 50 H V L CNN
 F1 "SWD_01X04" -50 -300 50 H V C CNN
 F2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" -50 -400 50 H I C CNN
-F3 "" 400 400 50 H I C CNN
+F3 "~" 400 400 50 H I C CNN
 $FPLIST
  *Header*
 $ENDFPLIST
@@ -532,7 +554,7 @@ DEF UART_01X03 J 0 40 Y Y 1 F N
 F0 "J" -150 250 50 H V L CNN
 F1 "UART_01X03" 0 -300 50 H V C CNN
 F2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" 0 -400 50 H I C CNN
-F3 "" 650 200 50 H I C CNN
+F3 "~" 650 200 50 H I C CNN
 $FPLIST
  *Header*
 $ENDFPLIST
