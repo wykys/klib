@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP XC7S15-FTGB196
+D Xilinx Field Programmable Gate Array
+K FPGA Spartan
+F https://www.xilinx.com/support/documentation/data_sheets/ds180_7Series_Overview.pdf
+$ENDCMP
+#
+#End Doc Library
