@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IS25LP064A-JKx
+D Flash NOR 64Mb QPI/QPI/QSPI, 8-pin WSON 5X6MM
+K SPI Flash 
+F http://www.issi.com/WW/pdf/25LP032-64A-B.pdf
+$ENDCMP
+#
+#End Doc Library
