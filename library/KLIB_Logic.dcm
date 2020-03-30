@@ -6,4 +6,10 @@ K and single gate
 F http://www.ti.com/lit/ds/symlink/sn74ahc1g08.pdf
 $ENDCMP
 #
+$CMP 74LCX16244MTD
+D Low Voltage 16-Bit Buffer/Line Driver with 5V Tolerant Inputs and Outputs
+K buffer
+F https://www.onsemi.com/pub/Collateral/74LCX16244-D.pdf
+$ENDCMP
+#
 #End Doc Library
