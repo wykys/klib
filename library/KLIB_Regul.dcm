@@ -12,4 +12,10 @@ K Step down
 F https://www.tme.eu/cz/details/mcp16301ht-e_ch/stabilizator-napeti-obvody-dc-dc/microchip-technology/
 $ENDCMP
 #
+$CMP NCP59744MN1
+D Dual-Rail, Very Low-Dropout, Programmable Soft-Start 3.0 A, VIN Range: 0.8 V to 5.5 V, VOUT Range: 0.8V to 3.6V
+K LDO
+F https://www.onsemi.com/pub/Collateral/NCP59744-D.PDF
+$ENDCMP
+#
 #End Doc Library
