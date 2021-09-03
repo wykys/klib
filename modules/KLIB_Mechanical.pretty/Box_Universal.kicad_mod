@@ -1,13 +1,16 @@
-(module Box_Universal (layer F.Cu) (tedit 5ABD986C)
-  (descr ~)
+(footprint "Box_Universal" (version 20210824) (generator pcbnew) (layer "F.Cu")
+  (tedit 61322699)
+  (descr "Universal footprint for mechanical parts that do not affect the layout")
   (tags "box universal")
-  (attr virtual)
-  (fp_text reference REF** (at 0 3.81) (layer F.SilkS) hide
+  (attr exclude_from_pos_files exclude_from_bom)
+  (fp_text reference "REF**" (at 0 3.81) (layer "F.SilkS") hide
     (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 257ee7d5-5bab-457f-bd1c-64517f967396)
   )
-  (fp_text value Box_Universal (at 0 -3.81) (layer F.Fab) hide
+  (fp_text value "Box_Universal" (at 0 -3.81) (layer "F.Fab") hide
     (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 26723fba-77ba-4680-927e-eadab008a59c)
   )
-  (fp_line (start 2.54 0) (end -2.54 0) (layer F.Fab) (width 0.15))
-  (fp_line (start 0 2.54) (end 0 -2.54) (layer F.Fab) (width 0.15))
+  (fp_line (start 2.54 0) (end -2.54 0) (layer "User.1") (width 0.15) (tstamp b3fd0805-8d84-4714-b07f-012c22f2bc4c))
+  (fp_line (start 0 2.54) (end 0 -2.54) (layer "User.1") (width 0.15) (tstamp f4dc0fdc-fd37-4502-88c1-a86bf0e60409))
 )
