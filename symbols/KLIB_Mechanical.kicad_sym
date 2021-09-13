@@ -1,4 +1,4 @@
-(kicad_symbol_lib (version 20201005) (generator kicad_symbol_editor)
+(kicad_symbol_lib (version 20210619) (generator kicad_symbol_editor)
   (symbol "KLIB_Mechanical:Bolt" (pin_numbers hide) (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
     (property "Reference" "H" (id 0) (at 2.54 1.27 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -243,7 +243,7 @@
       )
     )
   )
-  (symbol "KLIB_Mechanical:Fiducial" (pin_numbers hide) (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
+  (symbol "KLIB_Mechanical:Fiducial" (pin_numbers hide) (pin_names (offset 0) hide) (in_bom no) (on_board yes)
     (property "Reference" "FD" (id 0) (at 3.81 1.27 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
@@ -253,7 +253,7 @@
     (property "Footprint" "KLIB_Mechanical:Fiducial_Pad_1mm_Outer_2mm" (id 2) (at 0 -3.81 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (id 3) (at 0 -8.89 0)
+    (property "Datasheet" "" (id 3) (at 0 -8.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "ki_keywords" "Fiducial" (id 4) (at 0 0 0)
@@ -283,7 +283,7 @@
       )
     )
     (symbol "Fiducial_1_1"
-      (pin unconnected line (at 0 0 0) (length 1.27) hide
+      (pin no_connect line (at 0 0 0) (length 1.27) hide
         (name "~" (effects (font (size 1.27 1.27))))
         (number "~" (effects (font (size 1.27 1.27))))
       )
