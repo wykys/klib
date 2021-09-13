@@ -1,8 +1,8 @@
-(footprint "Fiducial_Pad_2mm_Outer_3mm" (version 20210606) (generator pcbnew) (layer "F.Cu")
-  (tedit 60D4C16B)
+(footprint "Fiducial_Pad_2mm_Outer_3mm" (version 20210824) (generator pcbnew) (layer "F.Cu")
+  (tedit 613F685B)
   (descr "Circular Fiducial, 0.5mm bare copper top; 1mm keepout (Level C)")
   (tags "marker")
-  (attr exclude_from_pos_files exclude_from_bom)
+  (attr exclude_from_bom)
   (fp_text reference "REF**" (at 0 -1.5) (layer "F.SilkS") hide
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp e9a8dc91-e9e8-48e1-95d7-c10003fd3bb7)
