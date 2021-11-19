@@ -1,9 +1,9 @@
 # create and install python enviroment
-# wykys 2018
+# wykys 2018 - 2021
 
 PYTHON = python3
 
-PIP = pip
+PIP = pip3
 PIP_FRERZE = $(PIP) freeze
 PIP_UPGRADE = $(PIP) install --upgrade pip
 PIP_INSTALL = $(PIP) install -r requirements.txt
@@ -57,7 +57,7 @@ run: $(VENV)
 	./$(script)
 
 help:
-	@echo "KLIB HELP:"
+	@echo "KLIB help:"
 	@echo ""
 	@echo "created or upgrade python enviroment:"
 	@echo "    make venv"
@@ -65,7 +65,7 @@ help:
 	@echo "install KLIB:"
 	@echo "    make install"
 	@echo ""
-	@echo "update KiCAD settings:"
+	@echo "update KiCad settings:"
 	@echo "    make update_kicad_settings or make"
 	@echo ""
 	@echo "STEP to WRL:"

@@ -1,40 +1,33 @@
 #!/usr/bin/env python3
 # wykys
 # automation of installation and administration of KLIB in KiCAD
-import difflib
+
 import os
 import sys
 
-from colorama import Back, Fore, Style
+from difflib import Differ
+from colorama import Fore, Style
 
-KLIB_PATH = os.path.expanduser('~') + '/projects/klib/'
+KLIB_PATH = os.path.expanduser('~') + '/projects/klib'
 
-KICAD_PATH = '/usr/share/kicad/'
-PATH_KICAD_COMMON = os.path.expanduser('~') + '/.config/kicad/kicad_common'
-PATH_FP_LIB_TABLE = os.path.expanduser('~') + '/.config/kicad/fp-lib-table'
-PATH_SYM_LIB_TABLE = os.path.expanduser('~') + '/.config/kicad/sym-lib-table'
-if not os.path.isdir(KICAD_PATH):
-    KICAD_PATH = KICAD_PATH = '/usr/share/kicad-nightly/'
-    PATH_KICAD_COMMON = os.path.expanduser('~') + '/.config/kicadnightly/kicad_common'
-    PATH_FP_LIB_TABLE = os.path.expanduser('~') + '/.config/kicadnightly/fp-lib-table'
-    PATH_SYM_LIB_TABLE = os.path.expanduser('~') + '/.config/kicadnightly/sym-lib-table'
+KICAD_PATH = '/usr/share/kicad-nightly'
+PATH_KICAD_CONFIG = os.path.expanduser('~') + '/.config/kicad/6.0'
+PATH_FP_LIB_TABLE = f'{PATH_KICAD_CONFIG}/fp-lib-table'
+PATH_SYM_LIB_TABLE = f'{PATH_KICAD_CONFIG}/sym-lib-table'
 
 KLIB = {
-    'W3D': KLIB_PATH + 'packages3d',
-    'WMOD': KLIB_PATH + 'modules',
-    'WSYM': KLIB_PATH + 'library',
-    'WSPI': KLIB_PATH + 'spice',
+    'KLIB_SYMBOL_DIR': f'{KLIB_PATH}/symbols',
+    'KLIB_3DMODEL_DIR': f'{KLIB_PATH}/3dmodels',
+    'KLIB_FOOTPRINT_DIR': f'{KLIB_PATH}/footprints'
 }
 
 KICAD = {
-    'KISYSMOD': KICAD_PATH + 'modules',
-    'KISYS3DMOD': KICAD_PATH + 'modules/packages3d',
-    'KICAD_TEMPLATE_DIR': KICAD_PATH + 'template',
-    'KICAD_SYMBOL_DIR': KICAD_PATH + 'library',
+    'KICAD6_FOOTPRINT_DIR': f'{KICAD_PATH}/footprints',
+    'KICAD6_SYMBOL_DIR': f'{KICAD_PATH}/symbols'
 }
 
-LIB = '.lib'
-MOD = '.pretty'
+SYMBOL_LIB = '.kicad_sym'
+FOOTPRINT_LIB = '.pretty'
 
 
 class NotExist(Exception):
@@ -50,7 +43,8 @@ def log(tag, color, fil):
         def func_wrapper(content):
             print(
                 '{}{}{}:{} {}{}'.format(
-                    color, Style.BRIGHT, tag, Style.NORMAL, func(content), Style.RESET_ALL
+                    color, Style.BRIGHT, tag, Style.NORMAL, func(
+                        content), Style.RESET_ALL
                 ),
                 file=fil
             )
@@ -94,16 +88,14 @@ def get_libraries(path, extension):
 def diff(text1_lines, text2_lines):
     def diff_change_log(color, operation, content):
         print(
-            '{}{}{}{}{}{}'.format(
-                color, Style.BRIGHT, operation, Style.NORMAL, content, Style.RESET_ALL
-            ),
-            end=''
+            f'{color}{Style.BRIGHT}{operation}{Style.NORMAL}{content}{Style.RESET_ALL}',
+            end='',
         )
 
     def diff_stat_log(tag, color, number):
-        info('{}{}{}{} {}'.format(color, Style.BRIGHT, tag, Style.RESET_ALL, number))
+        info(f'{color}{Style.BRIGHT}{tag}{Style.RESET_ALL} {number}')
 
-    differ = difflib.Differ()
+    differ = Differ()
     added_lines = 0
     removed_lines = 0
 
@@ -158,21 +150,20 @@ def lib_table(path, library, var, extension):
     with open(path, 'r') as fr:
         lib_table_old = fr.readlines()
         if len(lib_table_old) < 2 or lib_table_old[-1] != ')\n' or not 'lib_table' in lib_table_old[0]:
-            warning('{} was corrupted, created a new empty table'.format(path))
-            lib_table_old = ['(sym_lib_table\n', ')\n'] if extension == LIB else ['(fp_lib_table\n', ')\n']
+
+            warning(f'{path} was corrupted, created a new empty table')
+
+            if extension == SYMBOL_LIB:
+                lib_table_old = ['(sym_lib_table\n', ')\n']
+            else:
+                lib_table_old = ['(fp_lib_table\n', ')\n']
 
     lib_table_new = [line for line in lib_table_old if not var in line][:-1]
-    var = '${{{}}}'.format(var)
+    var = f'${{{var}}}'
 
     for lib in library:
         lib_table_new.append(
-            '  (lib (name {})(type {})(uri {}/{}{})(options "")(descr ""))\n'.format(
-                lib,
-                'Legacy' if extension == LIB else 'KiCad',
-                var,
-                lib,
-                extension
-            )
+            f'  (lib (name {lib})(type KiCad)(uri {var}/{lib}{extension})(options "")(descr ""))\n'
         )
 
     lib_table_new.append(')\n')
@@ -186,22 +177,26 @@ def lib_table(path, library, var, extension):
 
 if __name__ == '__main__':
     try:
-        kicad_library = get_libraries(KICAD['KICAD_SYMBOL_DIR'], LIB)
-        kicad_modules = get_libraries(KICAD['KISYSMOD'], MOD)
+        kicad_symbols = get_libraries(KICAD['KICAD6_SYMBOL_DIR'], SYMBOL_LIB)
+        kicad_footprints = get_libraries(
+            KICAD['KICAD6_FOOTPRINT_DIR'], FOOTPRINT_LIB)
 
-        klib_library = get_libraries(KLIB['WSYM'], LIB)
-        klib_modules = get_libraries(KLIB['WMOD'], MOD)
+        klib_symbols = get_libraries(KLIB['KLIB_SYMBOL_DIR'], SYMBOL_LIB)
+        klib_footprints = get_libraries(
+            KLIB['KLIB_FOOTPRINT_DIR'], FOOTPRINT_LIB)
 
-        info('update enviroment variables')
-        environment_variables(PATH_KICAD_COMMON)
+        #info('update enviroment variables')
+        # environment_variables(PATH_KICAD_COMMON)
 
         info('update official kicad library')
-        lib_old = lib_table(PATH_SYM_LIB_TABLE, kicad_library, 'KICAD_SYMBOL_DIR', LIB)[0]
-        mod_old = lib_table(PATH_FP_LIB_TABLE, kicad_modules, 'KISYSMOD', MOD)[0]
+        lib_old = lib_table(PATH_SYM_LIB_TABLE, kicad_symbols,
+                            'KICAD6_SYMBOL_DIR', SYMBOL_LIB)[0]
+        mod_old = lib_table(PATH_FP_LIB_TABLE,
+                            kicad_footprints, 'KICAD6_FOOTPRINT_DIR', FOOTPRINT_LIB)[0]
 
         info('update klib')
-        lib_new = lib_table(PATH_SYM_LIB_TABLE, klib_library, 'WSYM', LIB)[1]
-        mod_new = lib_table(PATH_FP_LIB_TABLE, klib_modules, 'WMOD', MOD)[1]
+        lib_new = lib_table(PATH_SYM_LIB_TABLE, klib_symbols, 'KLIB_SYMBOL_DIR', SYMBOL_LIB)[1]
+        mod_new = lib_table(PATH_FP_LIB_TABLE, klib_footprints, 'KLIB_FOOTPRINT_DIR', FOOTPRINT_LIB)[1]
 
         info('diff sym-lib-table')
         diff(lib_old, lib_new)
