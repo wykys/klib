@@ -8,7 +8,6 @@ File: `~/.config/kicad/6.0/kicad_common.json`
 
 ```json
 {
-  // ...
   "environment": {
       "vars": {
         "KLIB_SYMBOL_DIR": "path_to_klib/symbols",
@@ -16,7 +15,6 @@ File: `~/.config/kicad/6.0/kicad_common.json`
         "KLIB_FOOTPRINT_DIR": "path_to_klib/footprints"
       }
     },
-  // ...
 }
 ```
 
@@ -79,9 +77,11 @@ make venv
 
 ### STL TO X3D
 
-I use [Blender](https://www.blender.org/) to convert STL to X3D. I have created a Blender API [script](https://github.com/wykys/klib/blob/master/scripts/blender.py) that will make the necessary transformations before exporting to X3D to correctly display the output in KiCAD.
+I use [Blender](https://www.blender.org/) to convert STL to X3D. I have created a Blender API [script](https://github.com/wykys/klib/blob/master/scripts/blender.py) that will make the necessary transformations before exporting to X3D to correctly display the output in KiCad.
 
 ### STEP TO WRL
+
+⚠️ __Obsolete needs updating!__
 
 Converts the STEP file to a WRL file. It uses [FreeCAD](https://www.freecadweb.org/) and [FreeCAD scripts](https://github.com/SchrodingersGat/freecad-scripts).
 
