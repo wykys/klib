@@ -41,8 +41,6 @@ Creates the Python environment needed for some scripts. Clones the official KiCa
 make install
 ```
 
-This script automatically sets environment variables and library tables in KiCad configuration files (updates: `kicad_common`,` sym-lib-table` and `fp-lib-table`). This script searches for all official KiCad libraries and KLIB files (extensions: `.lib` and` .pretty`), so it can be used to update or manage library tables.
-
 ### UPDATE KICAD ENVIROMENT VARS
 
 This script automatically sets the environment variables necessary for the KLIB correct function. Extends the `~/.config/kicad/6.0/kicad_common.json` file with the following variables:
