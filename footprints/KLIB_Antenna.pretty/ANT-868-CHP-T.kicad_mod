@@ -33,7 +33,7 @@
     (xy 9 -2)) (layer "F.Fab") (width 0.1) (fill none) (tstamp e129b349-ea49-4bc6-a672-b9ffe36a679e))
   (pad "1" smd rect (at -8 0) (size 1.4 3.3) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp c8e73fb4-39cf-444d-91d1-98bd1973366b))
   (pad "2" smd rect (at 8 0) (size 1.4 3.3) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp ebb98b3f-db07-45ca-8ff6-4079a06b1257))
-  (model "${W3D}/KLIB_Antenna.3dshapes/ANT-868-CHP-T.step"
+  (model "${KLIB_3DMODEL_DIR}/KLIB_Antenna.3dshapes/ANT-868-CHP-T.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

@@ -37,7 +37,7 @@
   (pad 6 thru_hole circle (at 5.08 1.78) (size 1.5 1.5) (drill 0.89) (layers *.Cu *.Mask))
   (pad 8 thru_hole circle (at 7.11 1.78) (size 1.5 1.5) (drill 0.89) (layers *.Cu *.Mask))
   (pad 9 thru_hole circle (at 11.68 0.89) (size 2 2) (drill 1.57) (layers *.Cu *.Mask))
-  (model ${W3D}/KLIB_Connector_General.3dshapes/RJ45_TE_1-406541-1.step
+  (model ${KLIB_3DMODEL_DIR}/KLIB_Connector_General.3dshapes/RJ45_TE_1-406541-1.step
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

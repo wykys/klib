@@ -40,7 +40,7 @@
   (pad "2" thru_hole circle (at 2.54 0) (size 2 2) (drill 1) (layers *.Cu *.Mask) (tstamp 9225c204-893f-49c5-a4e9-2bb889858bc9))
   (pad "3" thru_hole circle (at 5.08 0) (size 2 2) (drill 1) (layers *.Cu *.Mask) (tstamp 98e84575-3176-403c-9a97-599b0bd2f2cb))
   (pad "4" thru_hole circle (at 7.62 0) (size 2 2) (drill 1) (layers *.Cu *.Mask) (tstamp 8901dd8d-8dad-4b2c-a24a-b20d4425bd59))
-  (model "${W3D}/KLIB_Display.3dshapes/OLED_960MILS_128x64_I2C.step"
+  (model "${KLIB_3DMODEL_DIR}/KLIB_Display.3dshapes/OLED_960MILS_128x64_I2C.step"
     (offset (xyz 0 0 6.5))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

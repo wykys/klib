@@ -50,7 +50,7 @@
   (pad "" np_thru_hole circle (at -5.4 31.5) (size 3 3) (drill 3) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 69.6 0.5) (size 3 3) (drill 3) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 69.6 31.5) (size 3 3) (drill 3) (layers *.Cu *.Mask))
-  (model "$(W3D)/KLIB_Display.3dshapes/RC1602B.wrl"
+  (model "$(KLIB_3DMODEL_DIR)/KLIB_Display.3dshapes/RC1602B.wrl"
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

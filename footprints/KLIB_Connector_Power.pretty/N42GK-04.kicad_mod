@@ -107,7 +107,7 @@
   (pad 2 thru_hole circle (at 2.75 2.1) (size 3 3) (drill 1.5) (layers *.Cu *.Mask))
   (pad 3 thru_hole circle (at -2.75 -2.1) (size 3 3) (drill 1.5) (layers *.Cu *.Mask))
   (pad 4 thru_hole circle (at 2.75 -2.1) (size 3 3) (drill 1.5) (layers *.Cu *.Mask))
-  (model "$(W3D)/KLIB_Connector_Power.3dshapes/N42GK-04.wrl"
+  (model "$(KLIB_3DMODEL_DIR)/KLIB_Connector_Power.3dshapes/N42GK-04.wrl"
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

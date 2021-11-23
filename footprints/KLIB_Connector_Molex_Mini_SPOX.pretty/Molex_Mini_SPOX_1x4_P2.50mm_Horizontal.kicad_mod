@@ -49,7 +49,7 @@
   (pad "2" thru_hole oval locked (at 2.5 0) (size 1.7 2) (drill 0.9) (layers *.Cu *.Mask) (tstamp 15fb34a1-616b-4551-a527-debdcfd509f4))
   (pad "3" thru_hole oval locked (at 5 0) (size 1.7 2) (drill 0.9) (layers *.Cu *.Mask) (tstamp 064cadbc-d3ea-4b21-a6a0-ce4c69337745))
   (pad "4" thru_hole oval locked (at 7.5 0) (size 1.7 2) (drill 0.9) (layers *.Cu *.Mask) (tstamp da64c1ac-17bf-44c1-a417-e8f6fd2fe619))
-  (model "${W3D}/KLIB_Connector_Molex_Mini_SPOX.3dshapes/22057045.step"
+  (model "${KLIB_3DMODEL_DIR}/KLIB_Connector_Molex_Mini_SPOX.3dshapes/22057045.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

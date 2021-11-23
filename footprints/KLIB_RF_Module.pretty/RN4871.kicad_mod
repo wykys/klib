@@ -41,7 +41,7 @@
   (pad 14 smd rect (at 4.25 -1.025 90) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask))
   (pad 15 smd rect (at 4.25 -2.225 90) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask))
   (pad 16 smd rect (at 4.25 -3.425 90) (size 0.7 1.5) (layers F.Cu F.Paste F.Mask))
-  (model "$(W3D)/KLIB_RF_Module.3dshapes/RN4871.step"
+  (model "$(KLIB_3DMODEL_DIR)/KLIB_RF_Module.3dshapes/RN4871.step"
     (offset (xyz 0 2.499999962453767 0.4999999924907534))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 180 0))

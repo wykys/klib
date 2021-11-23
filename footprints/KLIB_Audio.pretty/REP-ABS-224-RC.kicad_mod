@@ -72,7 +72,7 @@
   (pad 3 thru_hole oval (at -11 -18) (size 6 3) (drill 2 (offset 1 0)) (layers *.Cu *.Mask))
   (pad 3 thru_hole oval (at 11 18) (size 6 3) (drill 2 (offset -1 0)) (layers *.Cu *.Mask))
   (pad 3 thru_hole oval (at -11 18) (size 6 3) (drill 2 (offset 1 0)) (layers *.Cu *.Mask))
-  (model "$(W3D)/KLIB_Audio.3dshapes/ABS-224-RC.wrl"
+  (model "$(KLIB_3DMODEL_DIR)/KLIB_Audio.3dshapes/ABS-224-RC.wrl"
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

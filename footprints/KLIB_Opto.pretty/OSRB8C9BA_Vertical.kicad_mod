@@ -31,7 +31,7 @@
   (pad 1 thru_hole rect (at -2.54 0.08) (size 2 2) (drill 0.8) (layers *.Cu *.Mask))
   (pad 2 thru_hole circle (at 0 0.08) (size 2 2) (drill 0.8) (layers *.Cu *.Mask))
   (pad 3 thru_hole circle (at 2.54 0.08) (size 2 2) (drill 0.8) (layers *.Cu *.Mask))
-  (model "$(W3D)/KLIB_Opto.3dshapes/OSRB38C9BA_Vertical.wrl"
+  (model "$(KLIB_3DMODEL_DIR)/KLIB_Opto.3dshapes/OSRB38C9BA_Vertical.wrl"
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

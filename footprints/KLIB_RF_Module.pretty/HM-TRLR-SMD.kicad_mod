@@ -39,7 +39,7 @@
   (pad "8" smd rect (at 7 9.5) (locked) (size 1.2 2.6) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 8efb1037-e8c3-4d26-adef-443ddf665ae4))
   (pad "9" smd rect (at -5 -9.5) (locked) (size 1.2 2.6) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 98f15a70-27d0-45a0-87ad-5793ea00778a))
   (pad "10" smd rect (at -7 -9.5) (locked) (size 1.2 2.6) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp c9d5cc7d-7e81-48e6-89ba-00211c0b5b56))
-  (model "${W3D}/KLIB_RF_Module.3dshapes/HM-TRLR-SMD.step"
+  (model "${KLIB_3DMODEL_DIR}/KLIB_RF_Module.3dshapes/HM-TRLR-SMD.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

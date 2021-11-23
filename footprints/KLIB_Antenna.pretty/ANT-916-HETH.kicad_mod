@@ -2902,7 +2902,7 @@
       fffebf79-53f7-46de-bd3f-90de007989f4
  )
   )
-  (model "${W3D}/KLIB_Antenna.3dshapes/ANT-916-HETH.step"
+  (model "${KLIB_3DMODEL_DIR}/KLIB_Antenna.3dshapes/ANT-916-HETH.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
