@@ -68,7 +68,7 @@ make update_kicad_vars
 
 ### UPDATE KICAD LIB TABLES
 
-This script updates the library tables. It does this by searching for KiCad and KLIB library files (extensions: `.kicad_sym` and` .pretty`) and updating the sym-lib-table` and `fp-lib-table` files based on data analysis.
+This script updates the library tables. It does this by searching for KiCad and KLIB library files (extensions: `.kicad_sym` and `.pretty`) and updating the `sym-lib-table` and `fp-lib-table` files based on data analysis.
 
 ```bash
 # the first option is to run the command
