@@ -12,7 +12,7 @@ VENV = .venv
 VENV_CREATE = $(PYTHON) -m venv $(VENV)
 VENV_ACTIVATE = . .venv/bin/activate
 
-all: update_kicad_settings
+all: update_kicad_lib_tables
 
 .ONESHELL:
 $(VENV):
@@ -27,23 +27,28 @@ venv:
 	make $(VENV)
 
 .ONESHELL:
-update_kicad_settings: $(VENV)
+update_kicad_vars: $(VENV)
 	$(VENV_ACTIVATE)
-	./update_kicad_settings.py
+	./update_kicad_vars.py
 
 .ONESHELL:
-install: $(VENV) update_kicad_settings
-	git clone git@github.com:KiCad/kicad-library-utils.git
+update_kicad_lib_tables: $(VENV)
+	$(VENV_ACTIVATE)
+	./update_kicad_lib_tables.py
+
+.ONESHELL:
+install: $(VENV) update_kicad_vars
+	git clone https://gitlab.com/kicad/libraries/kicad-library-utils.git
 	PWD=pwd
 
 	echo "#!/usr/bin/env bash" > klib-update.sh
 	echo "cd $(PWD)" >> klib-update.sh
-	echo "make update_kicad_settings" >> klib-update.sh
+	echo "make update_kicad_lib_tables" >> klib-update.sh
 	chmod +x klib-update.sh
 
 	cd ~/.local/bin
-	ln -s $(PWD)/kicad-library-utils/schlib/checklib.py klib-checklib
-	ln -s $(PWD)/kicad-library-utils/pcb/check_kicad_mod.py klib-checkmod
+	ln -s $(PWD)/kicad-library-utils/klc-check/check_symbol.py klib-check-symbol
+	ln -s $(PWD)/kicad-library-utils/klc-check/check_footprint.py klib-check-footprint
 	ln -s $(PWD)/klib-update.sh klib-update
 
 .ONESHELL:
@@ -65,8 +70,10 @@ help:
 	@echo "install KLIB:"
 	@echo "    make install"
 	@echo ""
-	@echo "update KiCad settings:"
-	@echo "    make update_kicad_settings or make"
+	@echo "update KiCad variables in kicad_common.json:"
+	@echo "    make update_kicad_vars"
+	@echo "update KiCad lib tables:"
+	@echo "    make update_kicad_lib_tables or make"
 	@echo ""
 	@echo "STEP to WRL:"
 	@echo "    make step_to_wrl step=your_step_file.step"
