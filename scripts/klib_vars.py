@@ -56,6 +56,6 @@ KLIB.set_models3d('KLIB_3DMODEL_DIR', f'{PATH_KLIB}/3dmodels')
 KLIB.set_footprints('KLIB_FOOTPRINT_DIR', f'{PATH_KLIB}/footprints')
 
 KICAD = KlibVars()
-KICAD.set_symbols('KICAD6_SYMBOL_DIR', f'{PATH_KICAD}/footprints')
+KICAD.set_symbols('KICAD6_SYMBOL_DIR', f'{PATH_KICAD}/symbols')
 KICAD.set_models3d('KICAD6_3DMODEL_DIR', f'{PATH_KICAD}/3dmodels')
 KICAD.set_footprints('KICAD6_FOOTPRINT_DIR', f'{PATH_KICAD}/footprints')
