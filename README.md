@@ -104,8 +104,8 @@ make run script=~/your_script.py
 
 ## Types for users:
 
-* the variables are used in the following ways: `$(KLIB_SYMBOL_DIR)/path_to_lib`
-* `$(KIPRJMOD)` is path to current KiCad project folder
+* the variables are used in the following ways: `${KLIB_SYMBOL_DIR}/path_to_lib`
+* `${KIPRJMOD}` is path to current KiCad project folder
 
 
 ## Links
