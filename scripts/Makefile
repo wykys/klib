@@ -41,15 +41,30 @@ install: $(VENV) update_kicad_vars
 	git clone https://gitlab.com/kicad/libraries/kicad-library-utils.git
 	PWD=pwd
 
-	echo "#!/usr/bin/env bash" > klib-update.sh
-	echo "cd $(PWD)" >> klib-update.sh
-	echo "make update_kicad_lib_tables" >> klib-update.sh
+	echo "#!/usr/bin/env bash
+cd $(PWD)
+make update_kicad_lib_tables" > klib-update.sh
+
+	echo "#!/usr/bin/env bash
+cd $(PWD)
+git reset --hard HEAD
+git pull
+cd kicad-library-utils
+git reset --hard HEAD
+git pull
+cd ..
+make update_kicad_vars
+make update_kicad_lib_tables
+make install" > klib-upgrade.sh
+
 	chmod +x klib-update.sh
+	chmod +x klib-upgrade.sh
 
 	cd ~/.local/bin
 	ln -s $(PWD)/kicad-library-utils/klc-check/check_symbol.py klib-check-symbol
 	ln -s $(PWD)/kicad-library-utils/klc-check/check_footprint.py klib-check-footprint
 	ln -s $(PWD)/klib-update.sh klib-update
+	ln -s $(PWD)/klib-upgrade.sh klib-upgrade
 
 .ONESHELL:
 step_to_wrl:
