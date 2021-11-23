@@ -2,22 +2,6 @@
 
 __KLIB__ (KiCad Library) is a toolkit and libraries for hardware development in KiCad.
 
-## Requires the definition of these paths
-
-File: `~/.config/kicad/6.0/kicad_common.json`
-
-```json
-{
-  "environment": {
-      "vars": {
-        "KLIB_SYMBOL_DIR": "path_to_klib/symbols",
-        "KLIB_3DMODEL_DIR": "path_to_klib/3dmodels",
-        "KLIB_FOOTPRINT_DIR": "path_to_klib/footprints"
-      }
-    },
-}
-```
-
 ## Installation for GNU/Linux
 
 Requires `python3+`
@@ -30,7 +14,7 @@ make install
 
 ## Scripts
 
-The KLIB contains scripts for easy work with KiCAD. You can run all the scripts simply through `Makefile`. For the correct operation of this scripts, it's important to __run the script from the `klib/scripts` directory!__
+The KLIB contains scripts for easy work with KiCad. You can run all the scripts simply through `Makefile`. For the correct operation of this scripts, it's important to __run the script from the `klib/scripts` directory!__
 
 ### HELP
 
@@ -44,7 +28,12 @@ make help
 
 ### INSTALL
 
-Creates the python environment needed for some scripts. Closes third-party repositories. Install the necessary packages. Configures the KiCAD settings. Requires root rights. It also creates `klib-chacklib` and `klib-checkmod` links for KLC testing.
+Creates the Python environment needed for some scripts. Clones the official KiCad repository with scripts for checking KLC. Configures KiCad settings. The installation will also make the following scripts available on the system:
+
+* `klib-update` - Updates library tables
+* `klib-upgrade` - Updates repositories, configurations and scripts
+* `klib-check-symbol` - Check KLC schematic symbol
+* `klib-check-footprint` - Check KLC footprint
 
 #### Use:
 
@@ -52,9 +41,23 @@ Creates the python environment needed for some scripts. Closes third-party repos
 make install
 ```
 
-### UPDATE KICAD SETTINGS
+This script automatically sets environment variables and library tables in KiCad configuration files (updates: `kicad_common`,` sym-lib-table` and `fp-lib-table`). This script searches for all official KiCad libraries and KLIB files (extensions: `.lib` and` .pretty`), so it can be used to update or manage library tables.
 
-This script automatically sets environment variables and library tables in KiCAD configuration files (updates: `kicad_common`,` sym-lib-table` and `fp-lib-table`). This script searches for all official KiCAD libraries and KLIB files (extensions: `.lib` and` .pretty`), so it can be used to update or manage library tables.
+### UPDATE KICAD ENVIROMENT VARS
+
+This script automatically sets the environment variables necessary for the KLIB correct function. Extends the `~/.config/kicad/6.0/kicad_common.json` file with the following variables:
+
+```json
+{
+  "environment": {
+      "vars": {
+        "KLIB_SYMBOL_DIR": "path_to_klib/symbols",
+        "KLIB_3DMODEL_DIR": "path_to_klib/3dmodels",
+        "KLIB_FOOTPRINT_DIR": "path_to_klib/footprints"
+      }
+    },
+}
+```
 
 #### Use:
 
@@ -62,7 +65,18 @@ This script automatically sets environment variables and library tables in KiCAD
 # the first option is to run the command
 make
 # the second option is to run the command
-make update_kicad_settings
+make update_kicad_vars
+```
+
+### UPDATE KICAD LIB TABLES
+
+This script updates the library tables. It does this by searching for KiCad and KLIB library files (extensions: `.kicad_sym` and` .pretty`) and updating the sym-lib-table` and `fp-lib-table` files based on data analysis.
+
+```bash
+# the first option is to run the command
+make update_kicad_lib_tables
+# it is equivalent
+klib-update
 ```
 
 ### VENV
@@ -78,18 +92,6 @@ make venv
 ### STL TO X3D
 
 I use [Blender](https://www.blender.org/) to convert STL to X3D. I have created a Blender API [script](https://github.com/wykys/klib/blob/master/scripts/blender.py) that will make the necessary transformations before exporting to X3D to correctly display the output in KiCad.
-
-### STEP TO WRL
-
-⚠️ __Obsolete needs updating!__
-
-Converts the STEP file to a WRL file. It uses [FreeCAD](https://www.freecadweb.org/) and [FreeCAD scripts](https://github.com/SchrodingersGat/freecad-scripts).
-
-#### Use:
-
-```bash
-make step_to_wrl step=~/N42GK-04.step
-```
 
 ### RUN
 
