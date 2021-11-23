@@ -48,7 +48,7 @@ install: $(VENV) update_kicad_vars
 	@echo "make update_kicad_lib_tables" >> klib-update.sh
 	@chmod +x klib-update.sh
 
-	@echo echo "#!/usr/bin/env bash" > klib-upgrade.sh
+	@echo "#!/usr/bin/env bash" > klib-upgrade.sh
 	@echo "cd $(PWD)" >> klib-upgrade.sh
 	@echo "git reset --hard HEAD" >> klib-upgrade.sh
 	@echo "git pull" >> klib-upgrade.sh
