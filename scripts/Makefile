@@ -69,11 +69,6 @@ install: $(VENV) update_kicad_vars
 	@ln -s $(PWD)/klib-upgrade.sh klib-upgrade
 
 .ONESHELL:
-step_to_wrl:
-	@cd freecad-scripts
-	@freecad $(step) step2wrl.FCMacro
-
-.ONESHELL:
 run: $(VENV)
 	@$(VENV_ACTIVATE)
 	@./$(script)
@@ -91,9 +86,6 @@ help:
 	@echo "    make update_kicad_vars"
 	@echo "update KiCad lib tables:"
 	@echo "    make update_kicad_lib_tables or make"
-	@echo ""
-	@echo "STEP to WRL:"
-	@echo "    make step_to_wrl step=your_step_file.step"
 	@echo ""
 	@echo "run script in KLIB python enviroment:"
 	@echo "    make run script=your_script.py"
