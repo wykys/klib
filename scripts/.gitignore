@@ -139,3 +139,9 @@ cython_debug/
 
 # VS Code
 .vscode/
+
+# Generated scripts
+*.sh
+
+# KiCad library utils
+kicad-library-utils/
