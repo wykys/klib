@@ -5,7 +5,7 @@ from pathlib import Path
 
 PATH_KLIB = f'{Path.home()}/projects/klib'
 PATH_KICAD = '/usr/share/kicad-nightly'
-PATH_KICAD_CONFIG = f'{Path.home()}/.config/kicad/6.0'
+PATH_KICAD_CONFIG = f'{Path.home()}/.config/kicad/6.99'
 PATH_KICAD_COMMON = f'{PATH_KICAD_CONFIG}/kicad_common.json'
 PATH_FP_LIB_TABLE = f'{PATH_KICAD_CONFIG}/fp-lib-table'
 PATH_SYM_LIB_TABLE = f'{PATH_KICAD_CONFIG}/sym-lib-table'
