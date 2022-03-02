@@ -955,6 +955,6 @@
       (xy 0.376442 -4.999384)
       (xy 0.422099 -4.999422)
     )
-
-    (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu") (tstamp 9c221d52-946b-4b75-8659-2771c7e549f2))
+    (layer F.Cu) (width  0.000000)
+  )
 )

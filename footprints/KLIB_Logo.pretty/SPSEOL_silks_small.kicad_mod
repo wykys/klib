@@ -955,6 +955,6 @@
       (xy 0.2635 -3.499445)
       (xy 0.295459 -3.499471)
     )
-
-    (stroke (width 0) (type solid)) (fill solid) (layer "F.SilkS") (tstamp 1838018b-76e2-46c4-810f-488a77452c50))
+    (layer F.SilkS) (width  0.000000)
+  )
 )
