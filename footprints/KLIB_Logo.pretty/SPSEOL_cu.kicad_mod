@@ -1,4 +1,4 @@
-(footprint "SPSEOL_cu" (version 20220211) (generator pcbnew)
+(footprint "SPSEOL_cu" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
   (tedit 621E4BE2)
   (tags "logo")
