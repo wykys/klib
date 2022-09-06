@@ -22,7 +22,10 @@ def set_klib_variables(path) -> None:
     if 'vars' not in config['environment']:
         raise InvalidFileFormatException(path)
 
-    config['environment']['vars'].update(KLIB.__dict__())
+    if config['environment']['vars'] is None:
+        config['environment']['vars'] = KLIB.__dict__()
+    else:
+        config['environment']['vars'].update(KLIB.__dict__())
 
     with open(path, 'w', encoding='utf-8') as fw:
         json.dump(config, fw, ensure_ascii=False, indent=2)
